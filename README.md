@@ -139,11 +139,9 @@ pendientes de tu proyecto anterior.
 
 ### React
 
-### Firebase
+### API
 
-- [ ] Firestore
-- [ ] Firebase security rules
-- [ ] Observables
+- [ ] consumos de apis
 
 ### Testing
 - [ ] Testeo de tus interfaces
