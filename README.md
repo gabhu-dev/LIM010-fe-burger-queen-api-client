@@ -114,10 +114,56 @@ que es una herramienta de Google que nos ayuda a asegurar que nuestras web apps
 sigan "buenas prácticas". De hecho, usaremos Lighthouse a la hora de evaluar el
 proyecto.
 
-3. Finalmente, la interfaz debe estar diseñada específicamente para correr en
-**tablets**.
+Recuerda colocar en esta seccion los objetivos de aprendizaje que quedaron 
+pendientes de tu proyecto anterior.
 
-Tópicos: _react_, _angular_, _pwa_, _service-worker_.
+### HTML y CSS
+
+- [ ] HTML semántico
+- [ ] CSS flexbox
+- [ ] Sass
+- [ ] Maquetación
+
+### Angular
+
+- [ ] Directivas estructurales (ngIf / ngFor)
+- [ ] Estilos de componentes (ngStyle / ngClass)
+- [ ] Manejos de rutas
+- [ ] Creación y uso de servicios
+- [ ] Creación y uso Observables
+- [ ] Uso de HttpClient
+- [ ] Uso de Modulos
+- [ ] @Input | @Ouput
+
+### PWA
+
+### React
+
+### Firebase
+
+- [ ] Firestore
+- [ ] Firebase security rules
+- [ ] Observables
+
+### Testing
+- [ ] Testeo de tus interfaces
+- [ ] Testeo asíncrono
+- [ ] Mocking
+
+### Git y Github
+
+- [ ] Colaboración en Github
+- [ ] Organización en Github
+
+### Buenas prácticas de desarrollo
+
+- [ ] Modularización
+- [ ] Componentes
+- [ ] Manejo del estado de tu aplicacion
+- [ ] Nomenclatura / Semántica
+- [ ] Linting
+
+***
 
 ## 4. Consideraciones
 
@@ -136,6 +182,9 @@ En este proyecto Sí está permitido usar librerías o frameworks
 La aplicación debe ser un _Single Page App_. Los pedidos los tomaremos desde una
 _tablet_, pero **no queremos una app nativa**, sino una web app que sea
 **mobile-first**.
+
+La interfaz debe estar diseñada específicamente para correr en
+**tablets**.
 
 Necesitamos pensar bien en el aspecto UX de de quienes van a tomar los pedidos,
  el tamaño y aspecto de los botones, la visibilidad del estado actual del
