@@ -155,7 +155,7 @@ pendientes de tu proyecto anterior.
 - [ ] [Componentes `class` y componentes `function`](https://es.reactjs.org/docs/components-and-props.html#function-and-class-components)
 - [ ] `props`
 - [ ] [Manejo de eventos](https://es.reactjs.org/docs/handling-events.html)
-- [ ] [Listas y ids](https://es.reactjs.org/docs/lists-and-keys.html)
+- [ ] [Listas y keys](https://es.reactjs.org/docs/lists-and-keys.html)
 - [ ] [Renderizado condicional](https://es.reactjs.org/docs/conditional-rendering.html)
 - [ ] [Levantamiento de estados](https://es.reactjs.org/docs/lifting-state-up.html)
 - [ ] [`hooks`](https://es.reactjs.org/docs/hooks-intro.html)
