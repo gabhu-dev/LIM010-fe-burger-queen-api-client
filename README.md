@@ -139,14 +139,14 @@ pendientes de tu proyecto anterior.
 
 ### Angular
 
-- [ ] Directivas estructurales (ngIf / ngFor)
-- [ ] Estilos de componentes (ngStyle / ngClass)
-- [ ] Manejos de rutas
-- [ ] Creación y uso de servicios
-- [ ] Creación y uso Observables
-- [ ] Uso de HttpClient
-- [ ] Uso de Modulos
-- [ ] @Input | @Ouput
+- [ ] [Uso de Components | Templates](https://angular.io/guide/architecture-components#introduction-to-components)
+- [ ] [Directivas estructurales (ngIf / ngFor)](https://angular.io/guide/template-syntax#built-in-structural-directives)
+- [ ] [@Input | @Ouput](https://angular.io/guide/component-interaction#component-interaction)
+- [ ] [Creación y uso de servicios](https://angular.io/guide/architecture-services#providing-services)
+- [ ] [Manejos de rutas](https://angular.io/guide/router)
+- [ ] [Uso de Observables](https://angular.io/guide/observables-in-angular)
+- [ ] [Uso de HttpClient](https://angular.io/guide/http)
+- [ ] [Estilos de componentes (ngStyle / ngClass)](https://angular.io/guide/template-syntax#built-in-directives)
 
 
 ### React
