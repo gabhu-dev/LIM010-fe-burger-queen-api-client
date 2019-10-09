@@ -6,17 +6,70 @@
   height: 40vmin;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.login {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  background-color: #f2f2f2;
+  width: 375px;
+  height: 667px;
+}
+.login-input {
+  margin: auto;
+  width: 325px;
+  height: 215px;
+  font-size: 16px;
+  line-height: 35px;
+  color: #F29A2E;
+}
+.user{
+  padding: 5px;
+  height: 25px;
+
+}
+.btn-login{
+  background-color: #0D0D0D;
+  border-color: #0d0d0d;
+  /* font-weight: 100; */
+  height: 45px;
   color: white;
 }
-
-.App-link {
-  color: #09d3ac;
+.forgot-password{
+  text-align: right;
+  margin: 0.4em;
+  }
+.column{
+  display: flex;
+  flex-direction: column;
 }
+.calibri{
+  font-family: calibri;
+}
+.font16{
+  font-size: 16px;
+}
+.b-radius4{
+  border-radius: 4%;
+}
+
+/* Color Theme Swatches in Hex */
+.BurgerQueen-1-hex { color: #F2AC29; }
+.BurgerQueen-2-hex { color: #F29A2E; }
+.BurgerQueen-3-hex { color: #BF7C41; }
+.BurgerQueen-4-hex { color: #F2F2F2; }
+.BurgerQueen-5-hex { color: #0D0D0D; }
+
+/* Color Theme Swatches in RGBA */
+.BurgerQueen-1-rgba { color: rgba(242, 172, 41, 1); }
+.BurgerQueen-2-rgba { color: rgba(242, 154, 46, 1); }
+.BurgerQueen-3-rgba { color: rgba(191, 124, 65, 1); }
+.BurgerQueen-4-rgba { color: rgba(242, 242, 242, 1); }
+.BurgerQueen-5-rgba { color: rgba(13, 13, 13, 1); }
+
+/* Color Theme Swatches in HSLA */
+.BurgerQueen-1-hsla { color: hsla(39, 88, 55, 1); }
+.BurgerQueen-2-hsla { color: hsla(33, 88, 56, 1); }
+.BurgerQueen-3-hsla { color: hsla(28, 49, 50, 1); }
+.BurgerQueen-4-hsla { color: hsla(0, 0, 94, 1); }
+.BurgerQueen-5-hsla { color: hsla(0, 0, 5, 1); }
