@@ -1,0 +1,30 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+}
+
+
+
+/* Color Theme Swatches in Hex */
+.BurgerQueen-1-hex { color: #F2AC29; }
+.BurgerQueen-2-hex { color: #F29A2E; }
+.BurgerQueen-3-hex { color: #BF7C41; }
+.BurgerQueen-4-hex { color: #F2F2F2; }
+.BurgerQueen-5-hex { color: #0D0D0D; }
+
+/* Color Theme Swatches in RGBA */
+.BurgerQueen-1-rgba { color: rgba(242, 172, 41, 1); }
+.BurgerQueen-2-rgba { color: rgba(242, 154, 46, 1); }
+.BurgerQueen-3-rgba { color: rgba(191, 124, 65, 1); }
+.BurgerQueen-4-rgba { color: rgba(242, 242, 242, 1); }
+.BurgerQueen-5-rgba { color: rgba(13, 13, 13, 1); }
+
+/* Color Theme Swatches in HSLA */
+.BurgerQueen-1-hsla { color: hsla(39, 88, 55, 1); }
+.BurgerQueen-2-hsla { color: hsla(33, 88, 56, 1); }
+.BurgerQueen-3-hsla { color: hsla(28, 49, 50, 1); }
+.BurgerQueen-4-hsla { color: hsla(0, 0, 94, 1); }
+.BurgerQueen-5-hsla { color: hsla(0, 0, 5, 1); }
