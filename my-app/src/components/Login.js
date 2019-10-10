@@ -1,28 +1,76 @@
-import React ,{ useState }from 'react';
+import React, { useState} from 'react';
+// import React from 'react';
+
 import './css/Login.css';
+// import takeOrders from './TakeOrders.js';
+
+import { Link } from 'react-router-dom';
+
 const Login = () => {
-const [user, password] = useState('');
-const handleUser = (e) => {
-  console.log(user);
-}
-const btn = document.getElementById('btn-login');
-btn.addEventListener('click',handleUser);
-  return (<div className="login column white" id="login">
+  const [email, setEmail] = useState("");
+  const [password, setPassword]=useState("");
+ 
+  const handleEmailChange = (e) => {
+    setEmail(e.target.value);
+  }
+  const handlePassChange = (e) =>{
+    setPassword(e.target.value);
+  }
+  const handleTakeOrders = (e) => {
+    console.log('bienevenido');
+  }
+  // function Home() {
+  //   return <h2>Home</h2>;
+  // }
+  
+  // function About() {
+  //   return <h2>About</h2>;
+  // }
+  
+  // function Users() {
+  //   return <h2>Users</h2>;
+  // }
+  return (
+  <div className="login column white" id="login">
     <img className="logo" src="" alt="Logo Burger Queen"/>
     <div>
       <div className="login-input column calibri">
         <label htmlFor="email">Correo electrónico:</label>
-        <input className="user" id="email" name="email" type="text"/>
+        <input 
+          className="user"
+          value= {email} 
+          onChange= {handleEmailChange}  
+          name="email" 
+          type="text"
+          placeholder="Ingresa tu correo"
+        />
         <label htmlFor="password">Contraseña:</label>
-        <input className="user b-radius4 font16" id="password" name="password" type="password"/>		
+        <input 
+          className="user b-radius4 font16"
+          value={password}
+          onChange= {handlePassChange} 
+          name="password"
+          type="password"
+          placeholder="Ingresa Contraseña"
+        />		
       </div>
         <div className="login-input column calibri">
           <p id="message" className="hide center-s"></p>
-          <button className="btn-login b-radius4 font16 white" id="btn-login"><b>INGRESA</b></button>
-        </div>   
+          {/* <button 
+            className="btn-login b-radius4 font16 white" 
+           
+           
+            <b>INGRESA</b>
+            </button> */} 
+          <Link to = "/TakeOrders" className =  "btn-login b-radius4 font16 white" value="btn-login" >
+         <b>INGRESA</b> 
+        </Link>
+        </div>  
+      
+       
     </div>
-  </div>)
+  </div>
+    
+  );
 };
-
-
 export default Login;
