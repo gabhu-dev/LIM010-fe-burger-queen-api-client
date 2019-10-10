@@ -1,6 +1,7 @@
 import React, { useState} from 'react';
 import './css/Login.css';
 
+import { Link } from 'react-router-dom';
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -15,6 +16,17 @@ const Login = () => {
   const handleTakeOrders = (e) => {
     console.log('bienevenido');
   }
+  // function Home() {
+  //   return <h2>Home</h2>;
+  // }
+  
+  // function About() {
+  //   return <h2>About</h2>;
+  // }
+  
+  // function Users() {
+  //   return <h2>Users</h2>;
+  // }
   return (
   <div className="login column white" id="login">
     <img className="logo" src="" alt="Logo Burger Queen"/>
@@ -41,15 +53,21 @@ const Login = () => {
       </div>
         <div className="login-input column calibri">
           <p id="message" className="hide center-s"></p>
-          <button 
+          {/* <button 
             className="btn-login b-radius4 font16 white" 
-            value="btn-login"
-            onClick={handleTakeOrders}>
+           
+           
             <b>INGRESA</b>
-            </button>
-        </div>   
+            </button> */} 
+          <Link to = "/TakeOrders" className =  "btn-login b-radius4 font16 white" value="btn-login" >
+         <b>INGRESA</b> 
+        </Link>
+        </div>  
+      
+       
     </div>
   </div>
+    
   );
 };
 export default Login;
