@@ -13,20 +13,6 @@ const Login = () => {
   const handlePassChange = (e) =>{
     setPassword(e.target.value);
   }
-  const handleTakeOrders = (e) => {
-    console.log('bienevenido');
-  }
-  // function Home() {
-  //   return <h2>Home</h2>;
-  // }
-  
-  // function About() {
-  //   return <h2>About</h2>;
-  // }
-  
-  // function Users() {
-  //   return <h2>Users</h2>;
-  // }
   return (
   <div className="login column white" id="login">
     <img className="logo" src="" alt="Logo Burger Queen"/>
@@ -53,18 +39,10 @@ const Login = () => {
       </div>
         <div className="login-input column calibri">
           <p id="message" className="hide center-s"></p>
-          {/* <button 
-            className="btn-login b-radius4 font16 white" 
-           
-           
-            <b>INGRESA</b>
-            </button> */} 
           <Link to = "/TakeOrders" className =  "btn-login b-radius4 font16 white" value="btn-login" >
-         <b>INGRESA</b> 
-        </Link>
-        </div>  
-      
-       
+            <b>INGRESA</b> 
+          </Link>
+        </div>         
     </div>
   </div>
     
