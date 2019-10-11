@@ -124,17 +124,11 @@ pendientes de tu proyecto anterior.
 - [ ] Sass
 - [ ] Maquetación
 
+
 ### Frontend Development
 
 - [ ] Componentes
 - [ ] Manejo del estado
-
-### PWA
-
-- [ ] Concepto
-- [ ] Utilidad
-- [ ] Que es [Workbox](https://developers.google.com/web/tools/workbox)
-- [ ] Qué es un `serviceWorker`
 
 
 ### Angular
@@ -178,6 +172,12 @@ pendientes de tu proyecto anterior.
 - [ ] Testeo asíncrono
 - [ ] Mocking
 
+### PWA
+
+- [ ] Concepto
+- [ ] Utilidad
+- [ ] Que es [Workbox](https://developers.google.com/web/tools/workbox)
+- [ ] Qué es un `serviceWorker`
 
 ### Colaboración en Github
 
@@ -204,7 +204,11 @@ pendientes de tu proyecto anterior.
 
 ## 4. Consideraciones
 
-Este proyecto se debe "resolver" de a pares.
+Este proyecto se debe "resolver" de a pares. Recuerda que deberas de consumir una
+API que desarrollaran tus companeras, sin embargo no debes esperar a que esta API
+este terminada para empezar a codear, puedes utilizar herramientas como 
+[nock](https://github.com/nock/nock) o [mockoon](https://mockoon.com) para 
+mockear la API. 
 
 Trabaja en una historia hasta terminarla antes de pasar a la siguiente. Trabaja
 hasta la historia que puedas en el tiempo especificado.
@@ -375,6 +379,8 @@ para mantener actualizado el menú.
 * [npm-scripts](https://docs.npmjs.com/misc/scripts)
 * [Babel](https://babeljs.io/)
 * [webpack](https://webpack.js.org/)
+* [mockoon](https://mockoon.com)
+* [nock](https://github.com/nock/nock)
 
 ### PWA
 
