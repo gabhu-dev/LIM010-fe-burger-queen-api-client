@@ -13,6 +13,14 @@ const Login = () => {
   const handlePassChange = (e) =>{
     setPassword(e.target.value);
   }
+  
+ const handlebtn = (e) => {
+  console.log(email);
+
+}
+
+
+
   return (
   <div className="login column white" id="login">
     <img className="logo" src="" alt="Logo Burger Queen"/>
@@ -42,7 +50,8 @@ const Login = () => {
           <Link to = "/TakeOrders" className =  "btn-login b-radius4 font16 white" value="btn-login" >
             <b>INGRESA</b> 
           </Link>
-        </div>         
+        </div>    
+        <button type="submit"  value="btn" onClick={handlebtn}> enter</button>
     </div>
   </div>
     
