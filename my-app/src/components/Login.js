@@ -1,8 +1,5 @@
 import React, { useState} from 'react';
-// import React from 'react';
-
 import './css/Login.css';
-// import takeOrders from './TakeOrders.js';
 
 import { Link } from 'react-router-dom';
 
