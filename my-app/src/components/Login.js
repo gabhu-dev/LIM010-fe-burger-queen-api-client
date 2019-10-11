@@ -17,19 +17,9 @@ const Login = () => {
     setPassword(e.target.value);
   }
   const handleTakeOrders = (e) => {
-    console.log('bienevenido');
+    console.log(e.target.email);
   }
-  // function Home() {
-  //   return <h2>Home</h2>;
-  // }
-  
-  // function About() {
-  //   return <h2>About</h2>;
-  // }
-  
-  // function Users() {
-  //   return <h2>Users</h2>;
-  // }
+
   return (
   <div className="login column white" id="login">
     <img className="logo" src="" alt="Logo Burger Queen"/>
@@ -39,7 +29,7 @@ const Login = () => {
         <input 
           className="user"
           value= {email} 
-          onChange= {handleEmailChange}  
+          // onChange= {handleEmailChange}  
           name="email" 
           type="text"
           placeholder="Ingresa tu correo"
@@ -48,7 +38,7 @@ const Login = () => {
         <input 
           className="user b-radius4 font16"
           value={password}
-          onChange= {handlePassChange} 
+          // onChange= {handlePassChange} 
           name="password"
           type="password"
           placeholder="Ingresa Contraseña"
@@ -56,12 +46,11 @@ const Login = () => {
       </div>
         <div className="login-input column calibri">
           <p id="message" className="hide center-s"></p>
-          {/* <button 
+          <button 
             className="btn-login b-radius4 font16 white" 
-           
-           
-            <b>INGRESA</b>
-            </button> */} 
+            onClick= {handleTakeOrders}>
+           <b>INGRESA</b>
+            </button> 
           <Link to = "/TakeOrders" className =  "btn-login b-radius4 font16 white" value="btn-login" >
          <b>INGRESA</b> 
         </Link>
@@ -74,3 +63,5 @@ const Login = () => {
   );
 };
 export default Login;
+
+//  
