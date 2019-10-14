@@ -4,7 +4,7 @@ import React from 'react';
 
 
 import Login from './components/login/Login.js';
-import TakeOrders from './components/TakeOrders'
+import TakeOrders from './components/orders/TakeOrders.js'
 import {
   BrowserRouter as Router,
   Switch,
