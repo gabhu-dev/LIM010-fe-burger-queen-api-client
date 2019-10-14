@@ -1,0 +1,9 @@
+// se importan todos los componentes 
+// scss principal
+@import url('https://fonts.googleapis.com/css?family=Quattrocento+Sans&display=swap');
+@import 'components/login';
+
+body{
+margin: 0;
+font-family: 'Quattrocento Sans', sans-serif;
+}
