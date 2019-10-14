@@ -1,8 +1,7 @@
 import React, { useState} from 'react';
 import '../css/styles.css';
-import getToken from './token.js';
 import logo from '../burger.png';
-
+import getToken from '../login/token.js';
 import { Link } from 'react-router-dom';
 
 const Login = (props) => {
@@ -18,24 +17,20 @@ const Login = (props) => {
   }
   
  const handlebtn = (e) => {
-   e.preventDefault();
-  console.log(email);
+  e.preventDefault()
+  getToken(email, password).then((res) => {
+    console.log(res.token);
+    <Link to ="/TakeOrders"> </Link>
+  }).catch((err) => {
+      setErr(err.message)
+    });
 }
 
   return (
   <div className="login column white calibri" id="login">
     <img className="logo" src={logo} alt="logo burger queen"/>
     <p>¡Tu comida favorita!</p>
-      <form onSubmit={async e => {
-      e.preventDefault()
-
-      await getToken(email, password).then((res) => {
-        localStorage.setItem('token', res.token)
-        console.log(res.token)
-      }).catch((err) => {
-        setErr(err.message)
-      });
-      }}>
+      <form >
         <input 
           className="pink"
           value= {email} 
@@ -58,12 +53,13 @@ const Login = (props) => {
           value="btn" 
           onClick={handlebtn}> 
           INGRESA
+          <Link to ="/TakeOrders"></Link>
         </button>
         {err && <p className='error-message'>*{err}</p>}
       </form>
-    <Link to = "/TakeOrders" className =  "" value="btn-login" >
+    {/* <Link to = className =  "" value="btn-login" >
       <b>INGRESA</b> 
-      </Link>
+      </Link> */}
   </div>
   );
 };

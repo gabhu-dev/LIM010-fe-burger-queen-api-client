@@ -1,6 +1,5 @@
-import React from 'react';
-import './css/Login.css';
-
+import React from 'react'
+;
 
 const TakeOrders = () => {
   return (
