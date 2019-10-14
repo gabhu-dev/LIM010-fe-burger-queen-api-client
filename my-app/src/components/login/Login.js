@@ -1,8 +1,6 @@
 import React, { useState} from 'react';
 import '../css/styles.css';
 import getToken from './token.js';
-import getUser from './user.js';
-import auth from './auth.js'
 import logo from '../burger.png';
 
 import { Link } from 'react-router-dom';
@@ -27,7 +25,6 @@ const Login = (props) => {
   return (
   <div className="login column white calibri" id="login">
     <img className="logo" src={logo} alt="logo burger queen"/>
-    {/* <div className="form"> */}
     <p>¡Tu comida favorita!</p>
       <form onSubmit={async e => {
       e.preventDefault()
@@ -38,12 +35,7 @@ const Login = (props) => {
       }).catch((err) => {
         setErr(err.message)
       });
-       getUser(email).then((data) => {
-         localStorage.setItem('user', JSON.stringify(data));
-        auth.login(() => {props.history.push("/home") })
-         }).catch(console.error)
       }}>
-        {/* <label htmlFor="email">Correo electrónico:</label> */}
         <input 
           className="pink"
           value= {email} 
@@ -52,7 +44,6 @@ const Login = (props) => {
           type="text"
           placeholder=" &#128100; Ingresa tu correo electrónico"
         />
-        {/* <label htmlFor="password">Contraseña:</label> */}
         <input 
           className="pink"
           value={password}
@@ -68,14 +59,12 @@ const Login = (props) => {
           onClick={handlebtn}> 
           INGRESA
         </button>
-        {err && <p data-testid="errMsg" className='error-message'>*{err}</p>}
+        {err && <p className='error-message'>*{err}</p>}
       </form>
-    {/* </div> */}
     <Link to = "/TakeOrders" className =  "" value="btn-login" >
       <b>INGRESA</b> 
       </Link>
   </div>
-    
   );
 };
 export default Login;

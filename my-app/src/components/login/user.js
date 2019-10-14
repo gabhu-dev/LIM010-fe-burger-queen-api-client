@@ -1,5 +1,5 @@
 const getUser = (uid) => {
-  return fetch(`http://165.22.166.131:8080/users/${uid}`, {
+  return fetch(`urlAPI`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
