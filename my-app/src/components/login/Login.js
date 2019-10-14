@@ -1,8 +1,9 @@
 import React, { useState} from 'react';
-import '../css/Login.css';
+import '../css/styles.css';
 import getToken from './token.js';
 import getUser from './user.js';
-import auth from './auth.js';
+import auth from './auth.js'
+import logo from '../burger.png';
 
 import { Link } from 'react-router-dom';
 
@@ -25,8 +26,9 @@ const Login = (props) => {
 
   return (
   <div className="login column white calibri" id="login">
-    <img className="logo" src="" alt="Logo Burger Queen"/>
-    <div className="form">
+    <img className="logo" src={logo} alt="logo burger queen"/>
+    {/* <div className="form"> */}
+    <p>¡Tu comida favorita!</p>
       <form onSubmit={async e => {
       e.preventDefault()
 
@@ -41,23 +43,23 @@ const Login = (props) => {
         auth.login(() => {props.history.push("/home") })
          }).catch(console.error)
       }}>
-        <label htmlFor="email">Correo electrónico:</label>
+        {/* <label htmlFor="email">Correo electrónico:</label> */}
         <input 
-          className="user"
+          className="pink"
           value= {email} 
           onChange= {handleEmailChange}  
           name="email" 
           type="text"
-          placeholder="Ingresa tu correo electrónico"
+          placeholder=" &#128100; Ingresa tu correo electrónico"
         />
-        <label htmlFor="password">Contraseña:</label>
+        {/* <label htmlFor="password">Contraseña:</label> */}
         <input 
-          className="user"
+          className="pink"
           value={password}
           onChange= {handlePassChange} 
           name="password"
           type="password"
-          placeholder="Ingresa tu contraseña"
+          placeholder=" &#128274; Ingresa tu contraseña"
         />
         <button 
           className="btn-login" 
@@ -68,7 +70,7 @@ const Login = (props) => {
         </button>
         {err && <p data-testid="errMsg" className='error-message'>*{err}</p>}
       </form>
-    </div>
+    {/* </div> */}
     <Link to = "/TakeOrders" className =  "" value="btn-login" >
       <b>INGRESA</b> 
       </Link>

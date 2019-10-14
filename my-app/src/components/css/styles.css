@@ -1,0 +1,51 @@
+@import url("https://fonts.googleapis.com/css?family=Quattrocento+Sans&display=swap");
+.login {
+  background-color: #0D0D0D;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  font-size: 1.2em; }
+
+p {
+  color: #F2AC29; }
+
+input {
+  padding: 5px;
+  height: 2.5em;
+  width: 90%;
+  border-radius: 9px;
+  outline-style: none;
+  border: none;
+  margin: 0.8em; }
+
+.pink:focus {
+  box-shadow: 0 0 5px #f2ac29;
+  border: 1px solid rgba(242, 160, 42, 0.8); }
+
+.btn-login {
+  background-color: #0D0D0D;
+  border-radius: 15px;
+  width: 90%;
+  height: 3em;
+  color: white;
+  letter-spacing: 0.2rem;
+  transition: 0.3s opacity ease;
+  cursor: pointer;
+  font-size: 0.9em;
+  margin: 0.8em; }
+
+.btn-login:hover {
+  opacity: 0.6; }
+
+.column {
+  display: flex;
+  flex-direction: column; }
+
+.error-message {
+  color: #F2AC29; }
+
+body {
+  margin: 0;
+  font-family: 'Quattrocento Sans', sans-serif; }

@@ -13,13 +13,13 @@ import {
 
 function App() {
 
-  return  <Router>
-            <Switch>
-              <Route path="/takeOrders"> <TakeOrders />
-              </Route>
-              <Route path="/"> <Login/>
-              </Route>
-            </Switch> 
-          </Router>
+  return <Router>
+    <Switch>
+      <Route path="/takeOrders"> <TakeOrders />
+      </Route>
+      <Route path="/"> <Login />
+      </Route>
+    </Switch>
+  </Router>
 }
 export default App;
