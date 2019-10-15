@@ -3,6 +3,7 @@ import '../css/styles.css';
 import logo from '../burger.png';
 import getToken from '../login/token.js';
 import { Link } from 'react-router-dom';
+import { Redirect } from 'react-router-dom'
 
 const Login = (props) => {
   const [email, setEmail] = useState("");
@@ -18,9 +19,13 @@ const Login = (props) => {
   
  const handlebtn = (e) => {
   e.preventDefault()
-  getToken(email, password).then((res) => {
-    console.log(res.token);
-    <Link to ="/TakeOrders"> </Link>
+  getToken(email, password)
+  .then((res) => {
+    // console.log(res);
+    // return <Link to ="/TakeOrders"> </Link>
+    if(res.token === 'ok')
+    return <Redirect to="/TakeOrders" />;
+ 
   }).catch((err) => {
       setErr(err.message)
     });
