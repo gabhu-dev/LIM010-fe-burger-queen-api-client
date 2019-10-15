@@ -1,11 +1,9 @@
 import React, { useState} from 'react';
 import '../css/styles.css';
-import getToken from './token.js';
-import getUser from './user.js';
-import auth from './auth.js'
 import logo from '../burger.png';
-
+import getToken from '../login/token.js';
 import { Link } from 'react-router-dom';
+import { Redirect } from 'react-router-dom'
 
 const Login = (props) => {
   const [email, setEmail] = useState("");
@@ -20,30 +18,24 @@ const Login = (props) => {
   }
   
  const handlebtn = (e) => {
-   e.preventDefault();
-  console.log(email);
+  e.preventDefault()
+  getToken(email, password)
+  .then((res) => {
+    // console.log(res);
+    // return <Link to ="/TakeOrders"> </Link>
+    if(res.token === 'ok')
+    return <Redirect to="/TakeOrders" />;
+ 
+  }).catch((err) => {
+      setErr(err.message)
+    });
 }
 
   return (
   <div className="login column white calibri" id="login">
     <img className="logo" src={logo} alt="logo burger queen"/>
-    {/* <div className="form"> */}
     <p>¡Tu comida favorita!</p>
-      <form onSubmit={async e => {
-      e.preventDefault()
-
-      await getToken(email, password).then((res) => {
-        localStorage.setItem('token', res.token)
-        console.log(res.token)
-      }).catch((err) => {
-        setErr(err.message)
-      });
-       getUser(email).then((data) => {
-         localStorage.setItem('user', JSON.stringify(data));
-        auth.login(() => {props.history.push("/home") })
-         }).catch(console.error)
-      }}>
-        {/* <label htmlFor="email">Correo electrónico:</label> */}
+      <form >
         <input 
           className="pink"
           value= {email} 
@@ -52,7 +44,6 @@ const Login = (props) => {
           type="text"
           placeholder=" &#128100; Ingresa tu correo electrónico"
         />
-        {/* <label htmlFor="password">Contraseña:</label> */}
         <input 
           className="pink"
           value={password}
@@ -67,15 +58,14 @@ const Login = (props) => {
           value="btn" 
           onClick={handlebtn}> 
           INGRESA
+          <Link to ="/TakeOrders"></Link>
         </button>
-        {err && <p data-testid="errMsg" className='error-message'>*{err}</p>}
+        {err && <p className='error-message'>*{err}</p>}
       </form>
-    {/* </div> */}
-    <Link to = "/TakeOrders" className =  "" value="btn-login" >
+    {/* <Link to = className =  "" value="btn-login" >
       <b>INGRESA</b> 
-      </Link>
+      </Link> */}
   </div>
-    
   );
 };
 export default Login;
