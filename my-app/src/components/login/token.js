@@ -1,5 +1,5 @@
 const getToken = (email, password) => {
-  return fetch('urlApi/auth', {
+  return fetch('http://localhost:5000/auth', {
     method: 'POST',
     headers: {
      'Content-Type': 'application/json'
