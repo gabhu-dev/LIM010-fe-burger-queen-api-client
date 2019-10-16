@@ -23,4 +23,4 @@ const getToken = (email, password) => {
   })
 };
   
-export default getToken
+export default getToken;
