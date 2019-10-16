@@ -1,7 +1,7 @@
 import React, { useState} from 'react';
 import '../css/styles.css';
-import logo from '../css/img/burger.png';
-import getToken from './Token';
+import logo from '../css/img/logo.png';
+import getToken from './token';
 
 const Login = (props) => {
   const { history } = props;
@@ -11,6 +11,7 @@ const Login = (props) => {
   
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
+
   }
   const handlePassChange = (e) =>{
     setPassword(e.target.value);
@@ -18,10 +19,10 @@ const Login = (props) => {
   
  const handlebtn = (e) => {
   e.preventDefault()
-  getToken(email, password)
-  .then((res) => {
+  getToken(email, password).then((res) => {
     console.log(res.token);
     history.push('/take-orders')
+
   }).catch((err) => {
       setErr(err.message)
     });
@@ -31,10 +32,10 @@ const Login = (props) => {
   <div className="login column white calibri" id="login">
     <img className="logo" src={logo} alt="logo burger queen"/>
     <p>¡Tu comida favorita!</p>
-      <form >
+      <form className="column">
         <input 
           className="pink"
-          value= {email} 
+          value= {email}
           onChange= {handleEmailChange}  
           name="email" 
           type="email"

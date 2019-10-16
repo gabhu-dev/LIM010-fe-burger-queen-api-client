@@ -1,6 +1,7 @@
+
 import React from 'react';
-import Login from './components/login/Login.js';
-import TakeOrders from './components/orders/TakeOrders.js'
+import Login from './components/login/Login';
+import TakeOrders from './components/orders/TakeOrders'
 import {
   BrowserRouter as Router,
   Switch,
@@ -10,9 +11,9 @@ function App() {
 
   return <Router>
     <Switch>
-      <Route path="/take-orders"> <TakeOrders />
+      <Route exact path="/take-orders"> <TakeOrders />
       </Route>
-      <Route path="/" component={Login} />
+      <Route exact path="/" component={Login} />
     </Switch>
   </Router>
 }
