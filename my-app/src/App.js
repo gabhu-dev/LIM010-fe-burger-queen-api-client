@@ -1,8 +1,4 @@
-
-import './App.css';
 import React from 'react';
-
-
 import Login from './components/login/Login.js';
 import TakeOrders from './components/orders/TakeOrders.js'
 import {
@@ -10,15 +6,13 @@ import {
   Switch,
   Route,
 } from "react-router-dom";
-
 function App() {
 
   return <Router>
     <Switch>
-      <Route path="/takeOrders"> <TakeOrders />
+      <Route path="/take-orders"> <TakeOrders />
       </Route>
-      <Route path="/"> <Login />
-      </Route>
+      <Route path="/" component={Login} />
     </Switch>
   </Router>
 }

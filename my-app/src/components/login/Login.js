@@ -1,11 +1,10 @@
 import React, { useState} from 'react';
 import '../css/styles.css';
-import logo from '../burger.png';
-import getToken from '../login/token.js';
-import { Link } from 'react-router-dom';
-import { Redirect } from 'react-router-dom'
+import logo from '../css/img/burger.png';
+import getToken from './Token';
 
 const Login = (props) => {
+  const { history } = props;
   const [email, setEmail] = useState("");
   const [password, setPassword]=useState("");
   const [err, setErr] = useState("")
@@ -21,11 +20,8 @@ const Login = (props) => {
   e.preventDefault()
   getToken(email, password)
   .then((res) => {
-    // console.log(res);
-    // return <Link to ="/TakeOrders"> </Link>
-    if(res.token === 'ok')
-    return <Redirect to="/TakeOrders" />;
- 
+    console.log(res.token);
+    history.push('/take-orders')
   }).catch((err) => {
       setErr(err.message)
     });
@@ -41,7 +37,7 @@ const Login = (props) => {
           value= {email} 
           onChange= {handleEmailChange}  
           name="email" 
-          type="text"
+          type="email"
           placeholder=" &#128100; Ingresa tu correo electrónico"
         />
         <input 
@@ -58,13 +54,9 @@ const Login = (props) => {
           value="btn" 
           onClick={handlebtn}> 
           INGRESA
-          <Link to ="/TakeOrders"></Link>
         </button>
         {err && <p className='error-message'>*{err}</p>}
       </form>
-    {/* <Link to = className =  "" value="btn-login" >
-      <b>INGRESA</b> 
-      </Link> */}
   </div>
   );
 };
