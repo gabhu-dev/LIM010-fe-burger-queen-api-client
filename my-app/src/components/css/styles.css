@@ -1,12 +1,19 @@
 @import url("https://fonts.googleapis.com/css?family=Quattrocento+Sans&display=swap");
 .login {
-  background-color: #0D0D0D;
+  background-image: url(img/main-screen.jpg);
+  background-size: cover;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 1rem;
   font-size: 1.2em; }
+
+form {
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
 
 p {
   color: #F2AC29; }
@@ -45,6 +52,57 @@ input {
 
 .error-message {
   color: #F2AC29; }
+
+@media screen and (min-width: 900px) {
+  .login {
+    background-color: #F2AC29; } }
+
+.BurgerQueen-1-hex {
+  color: #F2AC29; }
+
+.BurgerQueen-2-hex {
+  color: #F29A2E; }
+
+.BurgerQueen-3-hex {
+  color: #BF7C41; }
+
+.BurgerQueen-4-hex {
+  color: #F2F2F2; }
+
+.BurgerQueen-5-hex {
+  color: #0D0D0D; }
+
+/* Color Theme Swatches in RGBA */
+.BurgerQueen-1-rgba {
+  color: #f2ac29; }
+
+.BurgerQueen-2-rgba {
+  color: #f29a2e; }
+
+.BurgerQueen-3-rgba {
+  color: #bf7c41; }
+
+.BurgerQueen-4-rgba {
+  color: #f2f2f2; }
+
+.BurgerQueen-5-rgba {
+  color: #0d0d0d; }
+
+/* Color Theme Swatches in HSLA */
+.BurgerQueen-1-hsla {
+  color: #f1ab27; }
+
+.BurgerQueen-2-hsla {
+  color: #f2992c; }
+
+.BurgerQueen-3-hsla {
+  color: #be7b41; }
+
+.BurgerQueen-4-hsla {
+  color: #f0f0f0; }
+
+.BurgerQueen-5-hsla {
+  color: #0d0d0d; }
 
 body {
   margin: 0;

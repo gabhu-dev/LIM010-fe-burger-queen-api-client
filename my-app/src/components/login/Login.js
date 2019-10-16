@@ -1,7 +1,7 @@
 import React, { useState} from 'react';
 import '../css/styles.css';
-import logo from '../css/img/burger.png';
-import getToken from './Token';
+import logo from '../css/img/logo.png';
+import getToken from './Token.js';
 
 const Login = (props) => {
   const { history } = props;
@@ -31,7 +31,7 @@ const Login = (props) => {
   <div className="login column white calibri" id="login">
     <img className="logo" src={logo} alt="logo burger queen"/>
     <p>¡Tu comida favorita!</p>
-      <form>
+      <form className="column">
         <input 
           className="pink"
           value= {email}
