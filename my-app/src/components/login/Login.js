@@ -11,7 +11,6 @@ const Login = (props) => {
   
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
-
   }
   const handlePassChange = (e) =>{
     setPassword(e.target.value);
@@ -22,9 +21,9 @@ const Login = (props) => {
   getToken(email, password).then((res) => {
     console.log(res.token);
     history.push('/take-orders')
-
   }).catch((err) => {
       setErr(err.message)
+      console.log(err)
     });
 }
 
@@ -53,11 +52,13 @@ const Login = (props) => {
           className="btn-login" 
           type="submit"  
           value="btn" 
-          onClick={handlebtn}> 
-          INGRESA
+          onClick={handlebtn}
+        > 
+        INGRESA
         </button>
         {err && <p className='error-message'>*{err}</p>}
       </form>
+      {email}
   </div>
   );
 };
