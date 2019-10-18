@@ -1,7 +1,7 @@
 import React, { useState} from 'react';
 import '../css/styles.css';
 import logo from '../css/img/logo.png';
-import getToken from './Token.js';
+import getToken from './Token';
 
 const Login = (props) => {
   const { history } = props;

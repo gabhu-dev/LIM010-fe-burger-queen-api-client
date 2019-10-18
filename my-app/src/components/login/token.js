@@ -4,10 +4,10 @@ const getToken = (email, password) => {
     headers: {
      'Content-Type': 'application/json'
     },
-    body: JSON.stringify({ 
+    body: { 
       email, 
       password 
-    })
+    },
   }).then((resp) => {
     if (resp.status === 200) {
       return resp.json()
