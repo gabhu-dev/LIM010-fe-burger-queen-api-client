@@ -1,7 +1,7 @@
 import React, { useState} from 'react';
 import '../css/styles.css';
 import logo from '../css/img/logo.png';
-import getToken from './Token';
+import getToken from '../../controller/login-controller/Token';
 
 const Login = (props) => {
   const { history } = props;
@@ -53,12 +53,12 @@ const Login = (props) => {
           type="submit"  
           value="btn" 
           onClick={handlebtn}
+          data-testid = "botonSubmit" 
         > 
         INGRESA
         </button>
-        {err && <p className='error-message'>*{err}</p>}
+        {err && <p data-testid="errorMessage"className='error-message'>*{err}</p>}
       </form>
-      {email}
   </div>
   );
 };
