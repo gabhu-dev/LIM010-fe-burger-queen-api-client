@@ -1,4 +1,4 @@
-import getToken  from '../../controller/login-controller/Token';
+import getToken  from '../../../controller/login-controller/Token';
 const fetchMock = require( 'fetch-mock' );
 
 afterEach(() => {

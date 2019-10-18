@@ -43,6 +43,7 @@ const Login = (props) => {
           name="email" 
           type="email"
           placeholder=" &#128100; Ingresa tu correo electrónico"
+          data-testid="email"
         />
         <input 
           className="pink"
@@ -51,16 +52,18 @@ const Login = (props) => {
           name="password"
           type="password"
           placeholder=" &#128274; Ingresa tu contraseña"
+          data-testid="password"
         />
         <button 
           className="btn-login" 
           type="submit"  
           value="btn" 
           onClick={handlebtn}
+          data-testid="botonSubmit"
         > 
         INGRESA
         </button>
-        {err && <p className='error-message'>*{err}</p>}
+        {err && <p data-testid="mensajeError"className='error-message'>{err}</p>}
       </form>
   </div>
   );
