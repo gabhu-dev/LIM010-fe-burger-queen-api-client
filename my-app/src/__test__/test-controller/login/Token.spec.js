@@ -1,3 +1,5 @@
+import getToken  from '../../../controller/login-controller/Token';
+const fetchMock = require( 'fetch-mock' );
 
 import getToken  from '../controller/login-controller/Token.js';
 const fetchMock = require('fetch-mock');
@@ -45,7 +47,7 @@ describe('getToken function',  () => {
          done()
        })
   }) 
-  it('Have to get token error 404', async(done) => {
+  it('Have to get token error 403', async(done) => {
     fetchMock
       .post('http://localhost:5000/auth', 404)
     getToken('aaaaa','123456')
@@ -53,5 +55,5 @@ describe('getToken function',  () => {
          expect(err.message).toBe('Solicite Credenciales con el Administrador')
          done()
        })
-  })
+  }) 
 })

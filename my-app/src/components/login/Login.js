@@ -1,6 +1,6 @@
 import React, { useState} from 'react';
-import '../css/styles.css';
-import logo from '../css/img/logo.png';
+import '../../css/styles.css';
+import logo from '../../css/img/logo.png';
 import getToken from '../../controller/login-controller/Token';
 
 const Login = (props) => {
@@ -18,13 +18,17 @@ const Login = (props) => {
   
  const handlebtn = (e) => {
   e.preventDefault()
-  getToken(email, password).then((res) => {
-    console.log(res.token);
-    history.push('/take-orders')
-  }).catch((err) => {
-      setErr(err.message)
-      console.log(err)
-    });
+  if(!email||!password) {
+    setErr('Ingresa Email y Contraseña')
+  } else{
+    getToken(email, password).then((res) => {
+      console.log(res.token);
+      history.push('/take-orders')
+    }).catch((err) => {
+        setErr(err.message)
+        console.log(err)
+      });
+  }
 }
 
   return (
@@ -39,6 +43,7 @@ const Login = (props) => {
           name="email" 
           type="email"
           placeholder=" &#128100; Ingresa tu correo electrónico"
+          data-testid="email"
         />
         <input 
           className="pink"
@@ -47,17 +52,18 @@ const Login = (props) => {
           name="password"
           type="password"
           placeholder=" &#128274; Ingresa tu contraseña"
+          data-testid="password"
         />
         <button 
           className="btn-login" 
           type="submit"  
           value="btn" 
           onClick={handlebtn}
-          data-testid = "botonSubmit" 
+          data-testid="botonSubmit"
         > 
         INGRESA
         </button>
-        {err && <p data-testid="errorMessage"className='error-message'>*{err}</p>}
+        {err && <p data-testid="mensajeError"className='error-message'>{err}</p>}
       </form>
   </div>
   );
