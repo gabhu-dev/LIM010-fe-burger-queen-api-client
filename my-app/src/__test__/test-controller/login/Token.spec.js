@@ -1,7 +1,5 @@
-import getToken  from '../../../controller/login-controller/Token';
-const fetchMock = require( 'fetch-mock' );
 
-import getToken  from '../controller/login-controller/Token.js';
+import getToken  from '../../../controller/login-controller/Token';
 const fetchMock = require('fetch-mock');
 afterEach(() => {
   fetchMock.reset();
