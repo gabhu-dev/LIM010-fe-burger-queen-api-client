@@ -21,12 +21,6 @@ const Clientname = ({ name, updateName, show, setShow }) => {
         </>
       )
       }
-      {show === false && (
-        <>
-          <p className="">{name}</p>
-          <button type="edit" className="">Edit</button>
-        </>
-      )}
     </form>
   )
 };

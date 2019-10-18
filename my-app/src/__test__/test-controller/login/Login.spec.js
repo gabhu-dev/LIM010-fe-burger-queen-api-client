@@ -63,15 +63,14 @@ it("Funtion getToken 1", async (done) => {
       fireEvent.change(getByTestId('email'), { target: { value: 'admin@burgerqueen.com' } })
       fireEvent.change(getByTestId('password'), { target: { value: '12345678' } })
     })
-    expect(getByTestId('email').value).toBe('admin@burgerqueen.com');
-    expect(getByTestId('password').value).toBe('12345678');
+
     act(() => {
       fireEvent.click(getByTestId('botonSubmit'))
     })
     const mensajeError = await waitForElement(() =>
       getByTestId('mensajeError')
     )
-    getToken(getByTestId('email'), getByTestId('password'))
+    getToken(getByTestId('email').value, getByTestId('password').value)
       .catch(() => {
         expect(mensajeError.textContent).toBe('Ingrese su usuario y/o contraseña');
         done();
