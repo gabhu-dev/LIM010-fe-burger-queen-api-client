@@ -1,7 +1,7 @@
 import React, { useState} from 'react';
-import '../css/styles.css';
-import logo from '../css/img/logo.png';
-import getToken from './Token';
+import '../../css/styles.css';
+import logo from '../../css/img/logo.png';
+import getToken from '../../controller/login-controller/Token';
 
 const Login = (props) => {
   const { history } = props;
@@ -18,13 +18,17 @@ const Login = (props) => {
   
  const handlebtn = (e) => {
   e.preventDefault()
-  getToken(email, password).then((res) => {
-    console.log(res.token);
-    history.push('/take-orders')
-  }).catch((err) => {
-      setErr(err.message)
-      console.log(err)
-    });
+  if(!email||!password) {
+    setErr('Ingresa Email y Contraseña')
+  } else{
+    getToken(email, password).then((res) => {
+      console.log(res.token);
+      history.push('/take-orders')
+    }).catch((err) => {
+        setErr(err.message)
+        console.log(err)
+      });
+  }
 }
 
   return (
@@ -58,7 +62,6 @@ const Login = (props) => {
         </button>
         {err && <p className='error-message'>*{err}</p>}
       </form>
-      {email}
   </div>
   );
 };
