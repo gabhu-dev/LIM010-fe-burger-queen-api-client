@@ -21,12 +21,10 @@ const Login = (props) => {
   if(!email||!password) {
     setErr('Ingresa Email y Contraseña')
   } else{
-    getToken(email, password).then((res) => {
-      console.log(res.token);
+    getToken(email, password).then(() => {
       history.push('/take-orders')
     }).catch((err) => {
         setErr(err.message)
-        console.log(err)
       });
   }
 }

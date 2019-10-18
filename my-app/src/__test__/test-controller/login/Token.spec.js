@@ -19,7 +19,7 @@ describe('getToken function',  () => {
   it('Have to get token error 400', async(done) => {
     fetchMock
       .post('http://localhost:5000/auth', 400)
-    getToken('aaaaa','123456')
+    getToken('aaaaa','aaaaa')
        .catch( err => {
          expect(err.message).toBe('Ingrese su usuario y/o contraseña')
          done()
@@ -29,7 +29,7 @@ describe('getToken function',  () => {
    it('Have to get token error 401', async(done) => {
     fetchMock
       .post('http://localhost:5000/auth', 401)
-    getToken('aaaaa','123456')
+    getToken('aaaaa','aaaaa')
        .catch( err => {
          expect(err.message).toBe('Ingrese correctamente su usuario y/o contraseña')
          done()
@@ -39,7 +39,7 @@ describe('getToken function',  () => {
   it('Have to get token error 403', async(done) => {
     fetchMock
       .post('http://localhost:5000/auth', 403)
-    getToken('aaaaa','123456')
+    getToken('aaaaa','aaaaa')
        .catch( err => {
          expect(err.message).toBe('Ingrese en el área correcta  Admin o Empleado')
          done()
@@ -48,7 +48,7 @@ describe('getToken function',  () => {
   it('Have to get token error 403', async(done) => {
     fetchMock
       .post('http://localhost:5000/auth', 404)
-    getToken('aaaaa','123456')
+    getToken('aaaaa','aaaaa')
        .catch( err => {
          expect(err.message).toBe('Solicite Credenciales con el Administrador')
          done()
