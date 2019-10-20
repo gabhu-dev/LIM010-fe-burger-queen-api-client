@@ -35,28 +35,26 @@ afterEach(() => {
   fetchMock.reset();
 })
 
-it("Funtion getToken", (done) => {
-fetchMock
-  .post('http://localhost:5000/auth', { status: 200, body: { token: 'ok' } });
-  const { getByTestId } = render(<Login url={url} />);
-  // expect(getByTestId('email').value).toBe('')
-  // expect(getByTestId('password').value).toBe('');
-  act(() => {
-    fireEvent.change(getByTestId('email'), { target: { value: 'admin@burgerqueen.com' } })
-    fireEvent.change(getByTestId('password'), { target: { value: '12345678' } })
-  })
-  //  expect(getByTestId('email').value).toBe('admin@burgerqueen.com');
-  // expect(getByTestId('password').value).toBe('12345678');
-  act(() => {
-    fireEvent.click(getByTestId('botonSubmit'))
-  })
- 
-  getToken(getByTestId('email').value, getByTestId('password').value)
-    .then(() => {
-      expect(history.location.pathname).toBe('/');
-      done();
+it("Funtion getToken", async (done) => {
+  fetchMock
+    .post('http://localhost:5000/auth', { status: 200, body: { token: 'ok' } });
+    const { getByTestId } = render(<Login url={url} />);
+    act(() => {
+      fireEvent.change(getByTestId('email'), { target: { value: 'admin@burgerqueen.com' } })
+      fireEvent.change(getByTestId('password'), { target: { value: '12345678' } })
     })
-});
+    expect(getByTestId('email').value).toBe('admin@burgerqueen.com');
+    expect(getByTestId('password').value).toBe('12345678');
+    act(() => {
+      fireEvent.click(getByTestId('botonSubmit'))
+    })
+    getToken(getByTestId('email').value, getByTestId('password').value)
+      .then(() => {
+        expect(history.location.pathname).toBe('/');
+        done();
+      })
+  });
+  
 it("Funtion getToken error message", async (done) => {
   fetchMock
     .post('http://localhost:5000/auth', 400);

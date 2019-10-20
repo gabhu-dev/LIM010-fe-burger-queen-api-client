@@ -1,8 +1,9 @@
 import React from 'react';
-
+import Header from './Header'
 const TakeOrders = () => {
   return (
   <div> 
+    <Header/>
   <input placeholder = "nombre del cliente"/>
   <div>agregar productos</div>
   <div>eliminar productos</div>

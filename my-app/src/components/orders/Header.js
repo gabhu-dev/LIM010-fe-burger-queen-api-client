@@ -1,5 +1,5 @@
 import React from 'react';
-import burger from '../css/img/burger.png'
+// import burger from '../css/img/burger.png'
 // eslint-disable-next-line
 
 const Header = ({ props }) => {
@@ -7,9 +7,9 @@ const Header = ({ props }) => {
     <header data-testid="header" className="">
       <ul className="">
         <li className="">
-          <button data-testid='burger' onClick={() => { props.history.push("/take-orders") }} className="">
+          {/* <button data-testid='burger' onClick={() => { props.history.push("/take-orders") }} className="">
             <img src={burger} alt="img" className="" />
-          </button>
+          </button> */}
         </li>
         <li className="">
           <div className="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i className='fas fa-bars'></i></div>

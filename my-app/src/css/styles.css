@@ -1,11 +1,11 @@
 @import url("https://fonts.googleapis.com/css?family=Quattrocento+Sans&display=swap");
 .login {
-  background-image: url(img/main-screen.jpg);
-  background-size: cover;
-  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  background-image: url(img/main-screen.jpg);
+  background-size: cover;
+  height: 100vh;
   padding: 1rem;
   font-size: 1.2em; }
 
@@ -55,7 +55,9 @@ input {
 
 @media screen and (min-width: 900px) {
   .login {
-    background-color: #F2AC29; } }
+    background-image: url(img/burger-width.jpg); }
+  form {
+    width: 50%; } }
 
 .BurgerQueen-1-hex {
   color: #F2AC29; }

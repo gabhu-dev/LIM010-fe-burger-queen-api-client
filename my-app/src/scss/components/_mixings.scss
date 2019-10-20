@@ -1,0 +1,9 @@
+@mixin flex-cen{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@mixin flex-col-row($property){
+  display: flex;
+  flex-direction: $property;
+}
