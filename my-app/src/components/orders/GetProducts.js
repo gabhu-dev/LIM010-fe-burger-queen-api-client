@@ -1,16 +1,12 @@
-const getSpecificProduct = (name, price) =>{
-  return fetch(`http://localhost:5000/products/:${name}`,{
+const getSpecificProduct = () =>{
+  return fetch('http://localhost:5000/products',{
     method:'GET',
     headers:{
       'Content-Type': 'application/json'
     },
-    body:{
-      name,
-      price
-    }
   }).then((res)=>{
     if(res.status === 200){
-      return res.jsonI()
+      return res.json()
     }else if (res.status === 401){
       return Promise.reject({message: '	si no hay cabecera de autenticación'})
     }else if(res.status === 404){
