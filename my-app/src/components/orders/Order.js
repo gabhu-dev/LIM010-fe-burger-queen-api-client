@@ -1,4 +1,4 @@
-const getOrder = (userId,client,products,id,quantity)=>{
+const getOrder = (userId, client, products, productId, quantity)=>{
   return fetch('http://localhost:5000/orders',{
     method:'POST',
     headers:{
@@ -8,7 +8,7 @@ const getOrder = (userId,client,products,id,quantity)=>{
       userId,
       client,
       products,
-      id,
+      productId,
       quantity
     },
   }).then((res)=>{
