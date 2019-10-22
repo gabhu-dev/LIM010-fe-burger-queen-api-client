@@ -1,6 +1,6 @@
 import React from 'react';
-import Header from './Header'
-import getSpecificProduct from './Products';
+import getSpecificProduct from './GetProducts';
+// import showProduct from './ShowProducts';
 const TakeOrders = () => {
   // const [userId, setUserId] = useState("");
   // const [client, setClient] = useState("");
@@ -22,9 +22,9 @@ const TakeOrders = () => {
   value ={client}
   onChange= {handleClientChange}
   />
-  <input type = "number" placeholder = "Nro de Orden"/>
-  <button>Desayuno</button>
-  <button>Almuerzo y cena</button>
+  <input
+    type = "number" 
+    placeholder = "Nro de Orden"/>
   <button
   onClick={handleProduct}
   >hamburguesa</button> */}
