@@ -1,5 +1,7 @@
+// se unen todos los componentes 
+// -> header,listProducts,
 import React from 'react';
-import getSpecificProduct from './GetProducts';
+
 // import showProduct from './ShowProducts';
 const TakeOrders = () => {
   // const [userId, setUserId] = useState("");
