@@ -18,10 +18,11 @@ const Login = (props) => {
   
  const handlebtn = (e) => {
   e.preventDefault()
-  if(!email||!password) {
+  if(!email || !password) {
     setErr('Ingresa Email y Contraseña')
   } else{
-    getToken(email, password).then(() => {
+    getToken(email, password).then((res) => {
+      localStorage.setItem('token', res.token)
       history.push('/take-orders')
     }).catch((err) => {
         setErr(err.message)
