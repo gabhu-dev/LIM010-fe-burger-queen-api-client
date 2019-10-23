@@ -1,7 +1,7 @@
 import React, { useState} from 'react';
 import '../../css/styles.css';
 import logo from '../../css/img/logo.png';
-import getToken from '../../controller/login-controller/Token';
+import getToken from '../../controller/login-controller/token';
 
 const Login = (props) => {
   const { history } = props;
@@ -21,7 +21,8 @@ const Login = (props) => {
   if(!email||!password) {
     setErr('Ingresa Email y Contraseña')
   } else{
-    getToken(email, password).then(() => {
+    getToken(email, password).then((res) => {
+      localStorage.setItem('token', res.token)
       history.push('/take-orders')
     }).catch((err) => {
         setErr(err.message)

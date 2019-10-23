@@ -2,7 +2,7 @@ import React from 'react';
 import { render, fireEvent, waitForElement, act } from '@testing-library/react'
 import Login from '../../../components/login/Login';
 import {history} from '../../utils';
-import getToken from '../../../controller/login-controller/Token';
+import getToken from '../../../controller/login-controller/token';
 const fetchMock = require( 'fetch-mock' );
 
 const url = '/'
@@ -47,15 +47,15 @@ fetchMock
   })
   expect(getByTestId('email').value).toBe('admin@burgerqueen.com');
   expect(getByTestId('password').value).toBe('12345678');
-  
-  getToken(getByTestId('email'), getByTestId('password'))
+    
+  getToken(getByTestId('email').value, getByTestId('password').value)
     .then(() => {
       expect(history.location.pathname).toBe('/');
       done();
     })     
 });
 
-it("Funtion getToken 1", async (done) => {
+it("Funtion getToken error message", async (done) => {
   fetchMock
     .post('http://localhost:5000/auth', 400);
     const { getByTestId } = render(<Login url={url} />);

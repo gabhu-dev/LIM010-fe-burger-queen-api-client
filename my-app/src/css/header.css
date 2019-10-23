@@ -1,0 +1,86 @@
+.header {
+  background:#F2AC29; 
+  border: 2px solid rgba(0, 0, 0, 0.5);
+  width: 100%;
+}
+.label {
+  font-size: 27px;
+  padding-left: 31%;
+  width: 30%;
+  left: 0;
+}
+.label i:hover{
+  cursor: pointer;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.btnMenu{
+  display: none;
+}
+.btnMenu:checked ~ .menu {
+  transform: translateX(0%);
+}
+.menu {
+  /* position: absolute; */
+  top: 66px;
+  transition: all 0.5s;
+  transform: translateX(-100%);
+  position: fixed;
+  width: 100%;
+}
+.menu ul {
+  background: rgba(254, 215, 95, 0.9);
+  padding-left: 0px;
+  height: auto;
+}
+.menu a {
+  display: block;
+  padding: 19px 33px;
+  color: rgba(0, 0, 0);
+  font-weight: 600;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+}
+.menu a:hover {
+  background: rgba(80, 78, 78, 0.836);
+  color: #fff;
+  text-decoration: none;
+}
+.img {
+  width: 18%;
+  right: 0;
+}
+.barraMenu {
+  display: flex;
+  align-items: center;
+}
+.cerrar {
+  background: #FED75F;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  font-size: 13px;
+  font-weight: 800;
+}
+
+
+
+@media (min-width:1024px) {
+  .img {
+    width: 8%;
+  }
+  .cerrar {
+    font-size: 25px;
+  }
+  .bienvenida {
+    font-size: 45px;
+  }
+}
+@media (min-width: 650px) and (max-width: 1023px) {
+  .img {
+    width: 9%;
+  }
+  .cerrar {
+    font-size: 12px;
+  }
+  .bienvenida {
+    font-size: 21px;
+  }
+}
