@@ -5,7 +5,7 @@ const editProduct = (token, admin, id, name, price)=>{
     method:'PUT',
     headers:{
       'Content-Type': 'application/json',
-      'Authorization': 'Bearer' + token
+      'authorization': 'Bearer ' + token
     },
     body:{
       admin,

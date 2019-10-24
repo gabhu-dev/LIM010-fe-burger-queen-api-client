@@ -5,7 +5,7 @@ const getSpecificProduct = (token, name, price, idProduct) => {
     method: 'GET',
     headers: {
      'Content-Type': 'application/json',
-     'Authorization': 'Bearer ' + token
+     'authorization': 'Bearer ' + token
     },
     body: { 
       name,
