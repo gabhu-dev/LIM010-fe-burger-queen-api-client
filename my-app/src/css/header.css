@@ -2,69 +2,63 @@
   background:#F2AC29; 
   border: 2px solid rgba(0, 0, 0, 0.5);
   width: 100%;
+  display: flex;
+  align-items: center;
+}
+.btn-menu{
+  display: none;
 }
 .label {
-  font-size: 27px;
-  padding-left: 31%;
-  width: 30%;
+  display: block;
+  padding: 2%;
+  border-right: 1px solid #fff;
+  width: 10%;
+  height: 20%;
   left: 0;
 }
 .label i:hover{
   cursor: pointer;
   background: rgba(0, 0, 0, 0.3);
+  width: 80%;
 }
-
-.btnMenu{
-  display: none;
-}
-.btnMenu:checked ~ .menu {
+.btn-menu:checked ~ .menu {
   transform: translateX(0%);
 }
-.menu {
-  /* position: absolute; */
-  top: 66px;
+.menu{
+  background-color: #F2AC29; 
+  width: 100%;
   transition: all 0.5s;
   transform: translateX(-100%);
   position: fixed;
-  width: 100%;
 }
 .menu ul {
+  display: flex;
+  flex-direction: column;
   background: rgba(254, 215, 95, 0.9);
   padding-left: 0px;
   height: auto;
 }
-.menu a {
-  display: block;
-  padding: 19px 33px;
-  color: rgba(0, 0, 0);
-  font-weight: 600;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+.menu li {
+  text-align: center;
+  border-top: 1px solid #fff;
 }
-.menu a:hover {
-  background: rgba(80, 78, 78, 0.836);
-  color: #fff;
+.menu li:hover{
+background: rgba(191, 124, 65, 0.678);
+}
+.link{
   text-decoration: none;
+  display: block;
+  padding: 15px 20px;
+  color: #ffffff;
+  font-size: 70%;
 }
 .img {
-  width: 18%;
-  right: 0;
+  width: 20%;
 }
-.barraMenu {
-  display: flex;
-  align-items: center;
-}
-.cerrar {
-  background: #FED75F;
-  border: 1px solid rgba(0, 0, 0, 0.5);
-  font-size: 13px;
-  font-weight: 800;
-}
-
-
 
 @media (min-width:1024px) {
   .img {
-    width: 8%;
+    width: 3%;
   }
   .cerrar {
     font-size: 25px;
@@ -75,7 +69,7 @@
 }
 @media (min-width: 650px) and (max-width: 1023px) {
   .img {
-    width: 9%;
+    width: 25%;
   }
   .cerrar {
     font-size: 12px;

@@ -6,19 +6,19 @@ import '../../css/header.css';
 const Header = ({ props }) => {
   return (
     <div className="header">
-    <div className=" barraMenu">
+      <div>
       <img src={burger} alt="burger" className="img" />
-      <input type="checkbox" className= "btnMenu" id="btnMenu" />
-      <label className="label" htmlFor="btnMenu"><i className='fas fa-bars'></i> </label>
-      <nav className="menu">
-        <ul>
-          <li className="itemMenu">  <Link to ="/take-orders">Pedidos</Link></li>
-          <li className="itemMenu">  <Link to ="/take-orders">Listos</Link></li>
-          <li className="itemMenu">  <Link to ="/">Cerrar sesión</Link></li>
-        </ul>
-      </nav>
+        <input type="checkbox" className= "btn-menu" id="btnMenu" />
+        <label className="label" htmlFor="btnMenu"><i className='fas fa-bars'></i> </label>
+        <nav className="menu">
+          <ul>
+            <li>  <Link className="link" to ="/take-orders">Pedidos</Link></li>
+            <li>  <Link className="link" to ="/take-orders">Listos</Link></li>
+            <li>  <Link className="link"to ="/">Cerrar sesión</Link></li>
+          </ul>
+        </nav>
+      </div>
     </div>
-  </div>
   )
 };
 

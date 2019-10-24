@@ -16,9 +16,7 @@ const Clientname = ({ name, updateName}) => {
             onChange={updateName}
             placeholder='Nombre'
             className='' />
-      </>
-      )
-     
+      </>     
     </form>
   )
 };

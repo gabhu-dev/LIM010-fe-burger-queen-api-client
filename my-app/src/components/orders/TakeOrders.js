@@ -1,25 +1,26 @@
 // se unen todos los componentes 
 // -> header,listProducts,
 import Header from './Header';
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import getProducts from '../../controller/products/products'; 
 import Clientname from './Cliente';
 import ListProducts from '../products/ListProducts';
+import './Order.css'
 
 const TakeOrders = (props) => {
   const [name, setName] = useState("");
   const [productData, setProductData]=useState([]);
+  const [type, setType] = useState("desayuno")
   const updateName = (e) => {
     setName(e.target.value)
   }
-  const handleBreak = (e)=>{
-    e.preventDefault()
+ 
+  useEffect(() => {
     const token = localStorage.getItem('token');
     getProducts(token)
-    .then(res=> setProductData(res))
-
-  }
-
+    .then(res=> setProductData(res));
+  }, [])
+  
   return (
   <div> 
     <Header props={props}/>
@@ -27,10 +28,13 @@ const TakeOrders = (props) => {
     <Clientname name={name} updateName={updateName} />
     <div> 
         <button
-        onClick= {handleBreak}>desayuno</button>
-        <button>almuerzo</button>
+        className="btn-da"
+        onClick= {() => setType('desayuno') }>Desayuno</button>
+        <button  
+        className="btn-da"
+        onClick= {() => setType('almuerzo') }>Almuerzo</button>
         <div>
-        <ListProducts data={productData}/>
+        <ListProducts  type={type} data={productData}/>
         </div>
       </div>
     </main>
