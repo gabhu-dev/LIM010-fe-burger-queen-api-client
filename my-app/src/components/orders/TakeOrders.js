@@ -1,27 +1,35 @@
 // se unen todos los componentes 
 // -> header,listProducts,
-import React,{useState} from 'react';
+import React,{useState, useEffect} from 'react';
 import getProducts from '../../controller/products/products';
 import ListProducts from '../products/ListProducts';
 const TakeOrders = (props) => {
   const [productData, setProductData]=useState([]);
-  const handleBreak = (e)=>{
-    e.preventDefault()
-    const token = localStorage.getItem('token');
-    getProducts(token)
+  const [type, setType] = useState('desayuno');
+  const token = localStorage.getItem('token');
+
+  useEffect(() => {
+  getProducts(token)
     .then(res=> setProductData(res))
-}
+}, [])
+// el array vacio-> no hay dependencia
+// si quisieramos que dependa del token -> dentro del array se colocaria al 
+// token para decirle que queremols que se actualize cada vez que el token cambie.
+
 return(
   <main>
   <button
-    onClick= {handleBreak}
+    onClick= {() => setType('desayuno')} 
   >
-  desayuno
+  Desayuno
   </button>
-  <button>almuerzo</button>
+  <button onClick = {() => setType('almuerzo')}>Almuerzo</button>
   <div>
-    <ListProducts data={productData}/>
+      <ListProducts type={type} data={productData} />
   </div>
+  {/* <div>
+    <ListProducts data={productData} menu="almuerzo"/>
+  </div> */}
 </main>
 )
 };
