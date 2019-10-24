@@ -2,7 +2,7 @@ import React from 'react';
 
 const  ListProducts = ({data, type}) => {
   const filter = data.filter((val)=> val.type === type);
-    return filter.map(product => (
+  return filter.map(product => (
   <div  key={product._id} >
     <img src={product.image} alt={product.name} />
     <div>
@@ -11,6 +11,7 @@ const  ListProducts = ({data, type}) => {
     <div>
       S/. {product.price}
     </div>
+    <button>agregar</button>
   </div>
  ))
  

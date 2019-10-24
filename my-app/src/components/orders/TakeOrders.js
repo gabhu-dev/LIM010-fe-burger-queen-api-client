@@ -3,12 +3,17 @@
 import React,{useState, useEffect} from 'react';
 import getProducts from '../../controller/products/products';
 import ListProducts from '../products/ListProducts';
+import Orders from './Take';
 const TakeOrders = (props) => {
   const [productData, setProductData]=useState([]);
   const [type, setType] = useState('desayuno');
-  const token = localStorage.getItem('token');
+  // la funcion orders va a recibir a los productos que 
+  // fueron clickeados 
+  // orders recibe
+  // teke orders lo pinta
 
-  useEffect(() => {
+  useEffect(() => { 
+  const token = localStorage.getItem('token');
   getProducts(token)
     .then(res=> setProductData(res))
 }, [])
@@ -25,11 +30,11 @@ return(
   </button>
   <button onClick = {() => setType('almuerzo')}>Almuerzo</button>
   <div>
-      <ListProducts type={type} data={productData} />
+    <Orders/>
   </div>
-  {/* <div>
-    <ListProducts data={productData} menu="almuerzo"/>
-  </div> */}
+  <div>
+    <ListProducts type={type} data={productData} />
+  </div>
 </main>
 )
 };
