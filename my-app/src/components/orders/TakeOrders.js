@@ -3,7 +3,7 @@
 import React,{useState, useEffect} from 'react';
 import getProducts from '../../controller/products/products';
 import ListProducts from '../products/ListProducts';
-import Orders from './Take';
+import Header from './Header';
 const TakeOrders = (props) => {
   const [productData, setProductData]=useState([]);
   const [type, setType] = useState('desayuno');
@@ -22,6 +22,8 @@ const TakeOrders = (props) => {
 // token para decirle que queremols que se actualize cada vez que el token cambie.
 
 return(
+  <div>
+  <Header props={props}/>
   <main>
   <button
     onClick= {() => setType('desayuno')} 
@@ -30,12 +32,10 @@ return(
   </button>
   <button onClick = {() => setType('almuerzo')}>Almuerzo</button>
   <div>
-    <Orders/>
-  </div>
-  <div>
     <ListProducts type={type} data={productData} />
   </div>
 </main>
+</div>
 )
 };
 export default TakeOrders;

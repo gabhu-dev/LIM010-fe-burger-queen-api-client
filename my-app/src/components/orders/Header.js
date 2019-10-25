@@ -1,31 +1,24 @@
+
 import React from 'react';
-// import burger from '../css/img/burger.png'
-// eslint-disable-next-line
-import {Link} from 'react-router-dom'
+// import burger from '../../css/img/logo.png';
+import {Link} from 'react-router-dom';
 
 const Header = ({ props }) => {
   return (
-    <header data-testid="header" className="">
-      <nav>
-      <div className="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i className='fas fa-bars'></i></div>
-        <ul className="">
-          <li className="">
-          {/* <button data-testid='burger' onClick={() => { props.history.push("/take-orders") }} className="">
-            <img src={burger} alt="img" className="" />
-          </button> */}
+    <div className="header">
+
+      {/* <img src={burger} alt="burger" className="img" /> */}
+        <input type="checkbox" className= "hide" id="btn-menu" />
+        <label htmlFor="btn-menu"><i className="fas fa-bars"></i></label>
+        <nav className="nav">
+          <ul className= "column">
+            <li>  <Link className="link" to ="/take-orders">Pedidos</Link></li>
+            <li>  <Link className="link" to ="/take-orders">Listos</Link></li>
+            <li>  <Link className="link"to ="/">Cerrar sesión</Link></li>
+          </ul>
+        </nav>
       
-        pedidos
-          </li>
-          <li className="">
-          listos
-          {/* <div className="" >
-            <button data-testid='close' onClick={() => { props.history.push("/") }} >Cerrar Sesión</button>
-          </div> */}
-        </li>
-        <li>  <Link to ="/">Cerrar sesion</Link></li>
-        </ul>
-      </nav>
-    </header>
+    </div>
   )
 };
 
