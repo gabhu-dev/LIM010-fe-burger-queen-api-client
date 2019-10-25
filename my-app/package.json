@@ -14,7 +14,7 @@
         "build": "react-scripts build",
         "test": "react-scripts test --coverage",
         "eject": "react-scripts eject",
-        "eslint":"eslint --ext .js src/"
+        "eslint": "eslint --ext .js src/"
     },
     "eslintConfig": {
         "extends": "react-app"
@@ -41,7 +41,7 @@
         "eslint-plugin-react-hooks": "^1.7.0",
         "fetch-mock": "^7.5.1",
         "nock": "^11.4.0",
-        "node-sass": "^4.12.0",
+        "node-sass": "^4.13.0",
         "sass-loader": "^8.0.0"
     }
 }

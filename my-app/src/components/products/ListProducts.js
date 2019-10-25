@@ -4,7 +4,7 @@ const  ListProducts = ({data, type}) => {
   const filter = data.filter((val)=> val.type === type);
   return filter.map(product => (
   <div  key={product._id} >
-    <img src={product.image} alt={product.name} />
+    <img className="nav-img" src={product.image} alt={product.name} />
     <div>
       <h5>{product.name}</h5>
     </div>

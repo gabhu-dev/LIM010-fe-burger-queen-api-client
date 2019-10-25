@@ -25,12 +25,15 @@ return(
   <div>
   <Header props={props}/>
   <main>
-  <button
+  <button 
+    className="btn-break-dinner"
     onClick= {() => setType('desayuno')} 
   >
   Desayuno
   </button>
-  <button onClick = {() => setType('almuerzo')}>Almuerzo</button>
+  <button 
+  className="btn-break-dinner"
+  onClick = {() => setType('almuerzo')}>Almuerzo</button>
   <div>
     <ListProducts type={type} data={productData} />
   </div>
