@@ -1,0 +1,91 @@
+@import 'mixings.scss' ;
+.hide{
+  display: none;
+}
+.header{
+  background:#F2AC29; 
+
+}
+.header label{
+  display: inline-block;
+  font-size: xx-large;
+  width: 50px;
+  height: 50px;
+  padding: 10px;
+  border-right: 1px solid #fff;
+}
+.header label :hover{
+  cursor: pointer;
+  background: rgba(0, 0, 0, 0.3);
+}
+.nav{
+  background-color: #F2AC29; 
+  width: 100%;
+  position: absolute;
+  margin-left: -100%;
+}
+.column{
+  @include flex-col-row(column)
+ }
+.nav ul{
+  margin: 0;
+  list-style: none;
+  padding: 0;
+}
+.nav li {
+  flex-grow: 1;
+}
+.nav li:hover {
+  background: rgba(0, 0, 0, 0.2);
+}
+.link {
+  display: block;
+  padding: 15px 20px;
+  color: #fff;
+  text-decoration: none;
+}
+#btn-menu:checked~.nav {
+  margin: 0;
+}
+// .img {
+//   width: 20%;
+// }
+
+// @media (min-width:1024px) {
+//   .img {
+//     width: 3%;
+//   }
+//   .cerrar {
+//     font-size: 25px;
+//   }
+//   .bienvenida {
+//     font-size: 45px;
+//   }
+// }
+@media screen and (min-width:900px) {
+  .header label {
+    display: none;
+}
+.nav {
+  margin: 0;
+  width: 100%;
+  position: inherit;
+}
+.nav ul {
+  display: flex;
+  flex-direction: row;
+}
+.link {
+  text-align: center;
+  padding: 2%;
+}
+  .img {
+    width: 25%;
+  }
+  .cerrar {
+    font-size: 12px;
+  }
+  .bienvenida {
+    font-size: 21px;
+  }
+}

@@ -43,7 +43,7 @@ const TakeOrders = (props) => {
     </div>
     </main>
   </div>
-  );
+)
 };
 export default TakeOrders;
 

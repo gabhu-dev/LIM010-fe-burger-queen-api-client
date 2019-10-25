@@ -18,7 +18,7 @@ const Login = (props) => {
   
  const handlebtn = (e) => {
   e.preventDefault()
-  if(!email||!password) {
+  if(!email || !password) {
     setErr('Ingresa Email y Contraseña')
   } else{
     getToken(email, password).then((res) => {

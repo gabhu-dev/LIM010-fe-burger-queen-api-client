@@ -1,11 +1,11 @@
 @import url("https://fonts.googleapis.com/css?family=Quattrocento+Sans&display=swap");
 .login {
-  background-image: url(img/main-screen.jpg);
-  background-size: cover;
-  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  background-image: url(img/main-screen.jpg);
+  background-size: cover;
+  height: 100vh;
   padding: 1rem;
   font-size: 1.2em; }
 
@@ -55,7 +55,9 @@ input {
 
 @media screen and (min-width: 900px) {
   .login {
-    background-color: #F2AC29; } }
+    background-image: url(img/burger-width.jpg); }
+  form {
+    width: 50%; } }
 
 .BurgerQueen-1-hex {
   color: #F2AC29; }
@@ -103,6 +105,98 @@ input {
 
 .BurgerQueen-5-hsla {
   color: #0d0d0d; }
+
+.hide {
+  display: none; }
+
+.header {
+  background: #F2AC29; }
+
+.header label {
+  display: inline-block;
+  font-size: xx-large;
+  width: 50px;
+  height: 50px;
+  padding: 10px;
+  border-right: 1px solid #fff; }
+
+.header label :hover {
+  cursor: pointer;
+  background: rgba(0, 0, 0, 0.3); }
+
+.nav {
+  background-color: #F2AC29;
+  width: 100%;
+  position: absolute;
+  margin-left: -100%; }
+
+.column {
+  display: flex;
+  flex-direction: column; }
+
+.nav ul {
+  margin: 0;
+  list-style: none;
+  padding: 0; }
+
+.nav li {
+  flex-grow: 1; }
+
+.nav li:hover {
+  background: rgba(0, 0, 0, 0.2); }
+
+.link {
+  display: block;
+  padding: 15px 20px;
+  color: #fff;
+  text-decoration: none; }
+
+#btn-menu:checked ~ .nav {
+  margin: 0; }
+
+  .nav-img{
+    position: relative;
+    padding: 0px;
+    width: 20%;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .btn-break-dinner{
+    background-color: #F2AC29;
+    border-radius: 1%;
+    width: 25%;
+    height: 2em;
+    color: white;
+    letter-spacing: 0.2rem;
+    transition: 0.3s opacity ease;
+    cursor: pointer;
+    font-size: 0.9em;
+    margin: 0.8em;
+  }
+  
+  .btn-da:hover{
+   opacity: 0.6;
+  }
+@media screen and (min-width: 900px) {
+  .header label {
+    display: none; }
+  .nav {
+    margin: 0;
+    width: 100%;
+    position: inherit; }
+  .nav ul {
+    display: flex;
+    flex-direction: row; }
+  .link {
+    text-align: center;
+    padding: 2%; }
+  .img {
+    width: 25%; }
+  .cerrar {
+    font-size: 12px; }
+  .bienvenida {
+    font-size: 21px; } }
 
 body {
   margin: 0;

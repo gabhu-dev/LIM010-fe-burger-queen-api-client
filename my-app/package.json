@@ -3,6 +3,7 @@
     "version": "0.1.0",
     "private": true,
     "dependencies": {
+        "node-fetch": "^2.6.0",
         "react": "^16.10.2",
         "react-dom": "^16.10.2",
         "react-router-dom": "^5.1.2",
@@ -13,7 +14,7 @@
         "build": "react-scripts build",
         "test": "react-scripts test --coverage",
         "eject": "react-scripts eject",
-        "eslint": "eslint src / ** / *. js src / ** / *. jsx"
+        "eslint": "eslint --ext .js src/"
     },
     "eslintConfig": {
         "extends": "react-app"
@@ -40,7 +41,7 @@
         "eslint-plugin-react-hooks": "^1.7.0",
         "fetch-mock": "^7.5.1",
         "nock": "^11.4.0",
-        "node-sass": "^4.12.0",
+        "node-sass": "^4.13.0",
         "sass-loader": "^8.0.0"
     }
 }

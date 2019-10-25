@@ -20,4 +20,3 @@ ListProducts.default = {
   type: 'desayuno'
 }
 export default ListProducts;
-
