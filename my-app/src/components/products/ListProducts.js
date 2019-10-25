@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 const  ListProducts = ({data, type}) => {
   const filter = data.filter((val)=> val.type === type);
   return filter.map(product => (
