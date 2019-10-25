@@ -29,11 +29,11 @@ const TakeOrders = (props) => {
     <Clientname name={name} updateName={updateName} />
     <div> 
         <button
-        className="btn-da"
-        onClick= {() => setType('desayuno') }>Desayuno</button>
+          className="btn-da"
+          onClick= {() => setType('desayuno') }>Desayuno</button>
         <button  
-        className="btn-da"
-        onClick= {() => setType('almuerzo') }>Almuerzo</button>
+          className="btn-da"
+          onClick= {() => setType('almuerzo') }>Almuerzo</button>
         <div>
           <ListProducts  type={type} data={productData}/>
         </div>
