@@ -6,7 +6,7 @@ import getProducts from '../../controller/products/products';
 import Clientname from './Cliente';
 import ListProducts from '../products/ListProducts';
 import Take from './Take';
-import './Order.css'
+
 
 const TakeOrders = (props) => {
   const [name, setName] = useState("");
@@ -29,10 +29,10 @@ const TakeOrders = (props) => {
     <Clientname name={name} updateName={updateName} />
     <div> 
         <button
-          className="btn-da"
+          className="btn-break-dinner"
           onClick= {() => setType('desayuno') }>Desayuno</button>
         <button  
-          className="btn-da"
+          className="btn-break-dinner"
           onClick= {() => setType('almuerzo') }>Almuerzo</button>
         <div>
           <ListProducts  type={type} data={productData}/>
