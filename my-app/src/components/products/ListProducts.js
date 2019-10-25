@@ -5,20 +5,18 @@ const  ListProducts = ({data, type}) => {
   return filter.map(product => (
   <div  key={product._id} >
     <img className="nav-img" src={product.image} alt={product.name} />
-    <div>
-      <h5>{product.name}</h5>
-    </div>
-    <div>
-      S/. {product.price}
-    </div>
-    <button>agregar</button>
+    <aside>
+      <div>
+        <h5>{product.name}</h5>
+      </div>
+      <div>
+        S/. {product.price}
+      </div>
+    </aside>
   </div>
  ))
- 
 };
-
-ListProducts.defaultProps = {
+ListProducts.default = {
   type: 'desayuno'
 }
-
 export default ListProducts;

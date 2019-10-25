@@ -1,7 +1,7 @@
 import React, { useState} from 'react';
 import '../../css/styles.css';
 import logo from '../../css/img/logo.png';
-import getToken from '../../controller/login-controller/Token';
+import getToken from '../../controller/login-controller/token';
 
 const Login = (props) => {
   const { history } = props;
