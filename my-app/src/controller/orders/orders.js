@@ -1,5 +1,5 @@
 // crea una nueva orden
-const getOrder = (userId, client, products, productId, quantity)=>{
+const postOrder = (userId, client, products, productId, quantity)=>{
   return fetch('http://localhost:5000/orders',{
     method:'POST',
     headers:{

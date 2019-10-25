@@ -5,6 +5,7 @@ import React, {useState, useEffect} from 'react';
 import getProducts from '../../controller/products/products'; 
 import Clientname from './Cliente';
 import ListProducts from '../products/ListProducts';
+import Take from './Take';
 import './Order.css'
 
 const TakeOrders = (props) => {
@@ -34,9 +35,12 @@ const TakeOrders = (props) => {
         className="btn-da"
         onClick= {() => setType('almuerzo') }>Almuerzo</button>
         <div>
-        <ListProducts  type={type} data={productData}/>
+          <ListProducts  type={type} data={productData}/>
         </div>
-      </div>
+    </div>
+    <div>
+      <Take props={props} />
+    </div>
     </main>
   </div>
   );
