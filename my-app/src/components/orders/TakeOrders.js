@@ -11,7 +11,8 @@ import Take from './Take';
 const TakeOrders = (props) => {
   const [name, setName] = useState("");
   const [productData, setProductData]=useState([]);
-  const [type, setType] = useState("desayuno")
+  const [type, setType] = useState("desayuno");
+  const [arrayOrder, setArrayOrder]= useState([]);
   const updateName = (e) => {
     setName(e.target.value)
   }
@@ -21,6 +22,11 @@ const TakeOrders = (props) => {
     getProducts(token)
     .then(res=> setProductData(res));
   }, [])
+   const addProduct = (producto)=>{
+    const newArray =[...arrayOrder,producto];
+    setArrayOrder(newArray)
+  }
+   console.log(arrayOrder)
   
   return (
   <div> 
@@ -33,34 +39,16 @@ const TakeOrders = (props) => {
           onClick= {() => setType('desayuno') }>Desayuno</button>
         <button  
           className="btn-break-dinner"
-          onClick= {() => setType('almuerzo') }>Almuerzo</button>
+          onClick= {() => setType('almuerzo') }>Almuerzo</    button>
         <div>
-          <ListProducts  type={type} data={productData}/>
+           <ListProducts  type={type} data={productData} addProduct={addProduct} />
         </div>
     </div>
     <div>
-      <Take props={props} />
+      <Take />
     </div>
     </main>
   </div>
 )
 };
 export default TakeOrders;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

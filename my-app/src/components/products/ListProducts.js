@@ -1,9 +1,9 @@
 import React from 'react';
 
-const  ListProducts = ({data, type}) => {
+const  ListProducts = ({data, type, addProduct }) => { 
   const filter = data.filter((val)=> val.type === type);
   return filter.map(product => (
-  <div  key={product._id} >
+  <div  key={product._id} onClick ={() => {addProduct(product)} } >
     <img className="nav-img" src={product.image} alt={product.name} />
     <aside>
       <div>
