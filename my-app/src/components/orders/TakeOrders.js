@@ -6,6 +6,8 @@ import getProducts from '../../controller/products/products';
 import Clientname from './Cliente';
 import ListProducts from '../products/ListProducts';
 import Take from './Take';
+import postOrder from '../../controller/orders/add-order';
+import getSpecificUser  from '../../controller/users/Id-user';
 
 
 const TakeOrders = (props) => {
@@ -28,8 +30,6 @@ const TakeOrders = (props) => {
       const newArray =arrayOrder.map((product) => {
         if(product.name ===newProducto.name) {
           product.qty = product.qty +1;
-          product.total= product.price * product.qty
-          console.log(product);
           return(
             product
           )
@@ -38,10 +38,27 @@ const TakeOrders = (props) => {
         }
       }) 
       setArrayOrder(newArray)
-      console.log(newArray);
     } else {
       setArrayOrder([...arrayOrder, { ...newProducto, qty: 1, total: newProducto.price }]);
     }
+  }
+  const sendPostOrders = () => {
+    const token = localStorage.getItem('token');
+    const email = localStorage.getItem('email');
+    console.log(arrayOrder.map(elem => ({ product: elem._id, qty: elem.qty })));
+    getSpecificUser (token,email)
+    .then((res) => {
+     postOrder(
+       token,
+       res._id, 
+       name, 
+       arrayOrder.map(elem => ({ product: elem._id, qty: elem.qty })))
+     .then((res) =>{
+      console.log(res)
+      // setName('');
+      // setArrayOrder([]);
+     })
+    });
   }
   return (
   <div> 
@@ -60,28 +77,10 @@ const TakeOrders = (props) => {
         </div>
     </section>
     <div>
-      <Take arrayOrder={arrayOrder} name={name} setArrayOrder={setArrayOrder}  total={total} setTotal={setTotal}/>
+      <Take arrayOrder={arrayOrder} name={name}  setArrayOrder={setArrayOrder}  total={total} setTotal={setTotal} sendPostOrders={sendPostOrders}/>
     </div>
     </main>
   </div>
 )
 };
 export default TakeOrders;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
