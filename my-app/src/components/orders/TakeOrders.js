@@ -34,6 +34,7 @@ return(
   <button 
   className="btn-break-dinner"
   onClick = {() => setType('almuerzo')}>Almuerzo</button>
+  <button onClick={()=> console.log()}>darle click</button>
   <div>
     <ListProducts type={type} data={productData} />
   </div>
