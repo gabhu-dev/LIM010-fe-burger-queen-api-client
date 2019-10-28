@@ -1,0 +1,14 @@
+@import 'mixings';
+// pintado de cada producto
+.product{
+  margin: 1em;
+  width:10em;
+  height: 12em;
+  @include flex-col-row(column);
+  align-items: center;
+  border:1px solid grey;
+}
+.nav-img{
+  width: 8em;
+  height:8em;
+}

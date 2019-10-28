@@ -1,5 +1,6 @@
 // crea una nueva orden
 // crea una nueva orden
+// necesita token de autenticacion
 const getOrder = (userId, client, products, productId, quantity)=>{
   return fetch('http://localhost:5000/orders',{
     method:'POST',
@@ -23,3 +24,4 @@ const getOrder = (userId, client, products, productId, quantity)=>{
     }
   })
 }
+export default getOrder;

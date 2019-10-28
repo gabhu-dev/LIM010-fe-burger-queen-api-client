@@ -1,32 +1,22 @@
 import React from 'react'
 
-const Clientname = ({ name, updateName, show, setShow }) => {
+const Clientname = ({ name, updateName}) => {
   const onSubmit = (e) => {
     e.preventDefault()
-    setShow(show === true ? false : true)
+    
   }
 
   return (
-    <form onSubmit={onSubmit} className="" data-test-id="div">
+    <form onSubmit={onSubmit} className="form-cliente" >
       <label className="">Cliente: </label>
-      {show === true && (
-        <>
+      <>
           <input
             type='text'
             value={name}
             onChange={updateName}
             placeholder='Nombre'
             className='' />
-          <button type='submit' className=""><i className="fas fa-check"></i></button>
-        </>
-      )
-      }
-      {show === false && (
-        <>
-          <p className="">{name}</p>
-          <button type="edit" className="">Edit</button>
-        </>
-      )}
+      </>     
     </form>
   )
 };

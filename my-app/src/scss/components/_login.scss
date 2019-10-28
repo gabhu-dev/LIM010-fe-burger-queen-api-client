@@ -1,7 +1,6 @@
 // componente login --> style
-@import 'mixings.scss' ;
+@import 'mixings' ;
 .login {
-  // background-color:#0D0D0D;
   @include flex-cen;
   background-image: url(img/main-screen.jpg);
   background-size: cover;
@@ -9,17 +8,22 @@
   padding: 1rem;
   font-size: 1.2em;
 }
-form{
+.form-login{
   width: 90%;
   @include flex-cen;
 }
-p{
-  color: #F2AC29;
+.message-logo{
+  color:#F2AC29;
+  font-weight: bold;
+  font-size: 23px;
+  padding: 0.5em;
+  margin: 0;
 }
-input{
+.input-form{
+  font-size: inherit;
   padding: 5px;
   height: 2.5em;
-  width: 90%; 
+  width: 90%;
   border-radius: 9px;
   outline-style: none;
   border: none;
@@ -30,14 +34,9 @@ input{
   border: 1px solid rgba(242, 160, 42, 0.8);
 }
 .btn-login{
-  background-color: #0D0D0D;
-  border-radius: 15px;
-  width: 90%;
-  height: 3em;
-  color: white;
+  @include btn(#0D0D0D, 90%, 3em, white);
   letter-spacing: 0.2rem;
   transition: 0.3s opacity ease;
-  cursor: pointer;
   font-size: 0.9em;
   margin: 0.8em;
 }
@@ -48,17 +47,11 @@ input{
  @include flex-col-row(column)
 }
 .error-message{
-  color: #F2AC29
+  color:#AD3025;
+  font-weight: bold;
+  font-size: 25px;
 }
 
-@media screen and (min-width:900px){
-  .login{
-  background-image: url(img/burger-width.jpg);
-  }
-  form{
-  width:50%;
-  }
-}
 
 
 .BurgerQueen-1-hex { color: #F2AC29; }
