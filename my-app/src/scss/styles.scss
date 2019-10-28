@@ -4,7 +4,55 @@
 @import 'components/login';
 @import 'components/header';
 @import 'components/products';
+@import 'components/take-orders';
+@import 'components/cliente';
 body{
 margin: 0;
 font-family: 'Quattrocento Sans', sans-serif;
+}
+// PARA TABLET
+// ------tablet parada
+@media screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait){
+  .form-login{
+    background-color:rgba(13, 13, 13, 0.50);
+  }
+}
+// tablet hechada
+@media screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape){
+  .form-login{
+    width: 60%;
+    background-color:rgba(13, 13, 13, 0.50);
+  }
+}
+
+// PARA WEBSITE
+@media screen and (min-width:1024px){
+  .form-login{
+  width:40%;
+  }
+  .header label {
+    display: none;
+}
+.nav {
+  margin: 0;
+  width: 100%;
+  position: inherit;
+}
+.nav ul {
+  display: flex;
+  flex-direction: row;
+}
+.link {
+  text-align: center;
+  padding: 2%;
+}
+  .img {
+    width: 25%;
+  }
+  .cerrar {
+    font-size: 12px;
+  }
+  .bienvenida {
+    font-size: 21px;
+  }
 }

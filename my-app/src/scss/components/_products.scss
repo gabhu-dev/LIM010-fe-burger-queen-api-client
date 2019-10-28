@@ -1,24 +1,14 @@
+@import 'mixings';
+// pintado de cada producto
+.product{
+  margin: 1em;
+  width:10em;
+  height: 12em;
+  @include flex-col-row(column);
+  align-items: center;
+  border:1px solid grey;
+}
 .nav-img{
-  position: relative;
-  padding: 0px;
-  width: 20%;
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.btn-da{
-  background-color: #F2AC29;
-  border-radius: 1%;
-  width: 25%;
-  height: 2em;
-  color: white;
-  letter-spacing: 0.2rem;
-  transition: 0.3s opacity ease;
-  cursor: pointer;
-  font-size: 0.9em;
-  margin: 0.8em;
-}
-
-.btn-da:hover{
- opacity: 0.6;
+  width: 8em;
+  height:8em;
 }

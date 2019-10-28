@@ -9,16 +9,21 @@
   padding: 1rem;
   font-size: 1.2em; }
 
-form {
+.form-login {
   width: 90%;
   display: flex;
   justify-content: center;
   align-items: center; }
 
-p {
-  color: #F2AC29; }
+.message-logo {
+  color: #F2AC29;
+  font-weight: bold;
+  font-size: 23px;
+  padding: 0.5em;
+  margin: 0; }
 
-input {
+.input-form {
+  font-size: inherit;
   padding: 5px;
   height: 2.5em;
   width: 90%;
@@ -33,13 +38,14 @@ input {
 
 .btn-login {
   background-color: #0D0D0D;
-  border-radius: 15px;
   width: 90%;
   height: 3em;
   color: white;
+  border-radius: 15px;
+  border: none;
+  cursor: pointer;
   letter-spacing: 0.2rem;
   transition: 0.3s opacity ease;
-  cursor: pointer;
   font-size: 0.9em;
   margin: 0.8em; }
 
@@ -51,13 +57,9 @@ input {
   flex-direction: column; }
 
 .error-message {
-  color: #F2AC29; }
-
-@media screen and (min-width: 900px) {
-  .login {
-    background-image: url(img/burger-width.jpg); }
-  form {
-    width: 50%; } }
+  color: #AD3025;
+  font-weight: bold;
+  font-size: 25px; }
 
 .BurgerQueen-1-hex {
   color: #F2AC29; }
@@ -110,75 +112,116 @@ input {
   display: none; }
 
 .header {
-  background: #F2AC29; }
-
-.header label {
-  display: inline-block;
-  font-size: xx-large;
-  width: 50px;
-  height: 50px;
-  padding: 10px;
-  border-right: 1px solid #fff; }
+  background: #F2AC29;
+  width: 48em; }
+  .header label {
+    display: inline-block;
+    font-size: 2em;
+    color: #fff;
+    width: 50px;
+    height: 50px;
+    padding: 10px;
+    border-right: 1px solid #fff; }
+  .header .nav {
+    background-color: #F2AC29;
+    width: 100%;
+    position: absolute;
+    margin-left: -100%; }
+    .header .nav ul {
+      margin: 0;
+      list-style: none;
+      padding: 0; }
+      .header .nav ul li {
+        flex-grow: 1; }
+        .header .nav ul li .link {
+          display: block;
+          padding: 15px 20px;
+          color: #fff;
+          text-decoration: none; }
 
 .header label :hover {
   cursor: pointer;
   background: rgba(0, 0, 0, 0.3); }
 
-.nav {
-  background-color: #F2AC29;
-  width: 100%;
-  position: absolute;
-  margin-left: -100%; }
-
 .column {
   display: flex;
   flex-direction: column; }
 
-.nav ul {
-  margin: 0;
-  list-style: none;
-  padding: 0; }
-
-.nav li {
-  flex-grow: 1; }
-
 .nav li:hover {
   background: rgba(0, 0, 0, 0.2); }
-
-.link {
-  display: block;
-  padding: 15px 20px;
-  color: #fff;
-  text-decoration: none; }
 
 #btn-menu:checked ~ .nav {
   margin: 0; }
 
-  .nav-img{
-    position: relative;
-    padding: 0px;
-    width: 20%;
-    display: flex;
-    flex-wrap: wrap;
-  }
-  
-  .btn-break-dinner{
-    background-color: #F2AC29; 
-    border-radius: 1%;
-    width: 25%;
-    height: 2em;
-    color: white;
-    letter-spacing: 0.2rem;
-    transition: 0.3s opacity ease;
-    cursor: pointer;
-    font-size: 0.9em;
-    margin: 0.8em;
-  }
-  
-  .btn-da:hover{
-   opacity: 0.6;
-  }
-@media screen and (min-width: 900px) {
+.product {
+  margin: 1em;
+  width: 10em;
+  height: 12em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid grey; }
+
+.nav-img {
+  width: 8em;
+  height: 8em; }
+
+.products-container {
+  margin: 2em;
+  background-color: #E0E3E4; }
+
+.btn-break-dinner {
+  background-color: #F29A2E;
+  width: 25%;
+  height: 2em;
+  color: white;
+  border-radius: 15px;
+  border: none;
+  cursor: pointer;
+  letter-spacing: 0.2rem;
+  transition: 0.3s opacity ease;
+  font-size: 0.9em;
+  margin: 0.8em; }
+
+.btn-break-dinner:hover {
+  opacity: 0.6; }
+
+.subproducts-container {
+  width: 90%;
+  padding: 2em;
+  display: flex;
+  flex-flow: row wrap;
+  background-color: #EBEFF1; }
+
+main {
+  background-color: #E0E3E4;
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+
+.form-cliente {
+  margin: 1em;
+  padding: 0.5em;
+  width: 40%;
+  height: 3em;
+  background-color: #EBEFF1; }
+
+body {
+  margin: 0;
+  font-family: 'Quattrocento Sans', sans-serif; }
+
+@media screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+  .form-login {
+    background-color: rgba(13, 13, 13, 0.5); } }
+
+@media screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+  .form-login {
+    width: 60%;
+    background-color: rgba(13, 13, 13, 0.5); } }
+
+@media screen and (min-width: 1024px) {
+  .form-login {
+    width: 40%; }
   .header label {
     display: none; }
   .nav {
@@ -197,7 +240,3 @@ input {
     font-size: 12px; }
   .bienvenida {
     font-size: 21px; } }
-
-body {
-  margin: 0;
-  font-family: 'Quattrocento Sans', sans-serif; }
