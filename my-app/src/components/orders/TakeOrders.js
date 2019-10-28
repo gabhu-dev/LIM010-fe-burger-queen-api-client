@@ -67,3 +67,21 @@ const TakeOrders = (props) => {
 )
 };
 export default TakeOrders;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

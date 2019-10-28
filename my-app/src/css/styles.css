@@ -153,6 +153,7 @@
 #btn-menu:checked ~ .nav {
   margin: 0; }
 
+<<<<<<< HEAD
 .product {
   margin: 1em;
   width: 10em;
@@ -222,6 +223,33 @@ body {
 @media screen and (min-width: 1024px) {
   .form-login {
     width: 40%; }
+=======
+  .nav-img{
+    position: relative;
+    padding: 0px;
+    width: 20%;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .btn-break-dinner{
+    background-color: #F2AC29;
+    border-radius: 1%;
+    width: 25%;
+    height: 2em;
+    color: white;
+    letter-spacing: 0.2rem;
+    transition: 0.3s opacity ease;
+    cursor: pointer;
+    font-size: 0.9em;
+    margin: 0.8em;
+  }
+  
+  .btn-da:hover{
+   opacity: 0.6;
+  }
+@media screen and (min-width: 900px) {
+>>>>>>> 87e28351212ca8fdc7c7ca80f6aa3d234bebc7dd
   .header label {
     display: none; }
   .nav {
