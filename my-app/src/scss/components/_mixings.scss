@@ -1,4 +1,4 @@
-// reciclar classes
+// reciclar
 @mixin flex-cen{
   display: flex;
   justify-content: center;
@@ -8,4 +8,12 @@
   display: flex;
   flex-direction: $property;
 }
-// 
+@mixin btn($property, $property-2, $property-3, $property-4) {
+  background-color: $property;
+  width: $property-2;
+  height: $property-3;
+  color: $property-4;
+  border-radius:15px;
+  border:none;
+  cursor: pointer;
+}

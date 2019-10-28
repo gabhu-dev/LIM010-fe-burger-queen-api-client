@@ -30,7 +30,6 @@ const TakeOrders = (props) => {
       const newArray =arrayOrder.map((product) => {
         if(product.name ===newProducto.name) {
           product.qty = product.qty +1;
-          product.total= product.price * product.qty
           return(
             product
           )
@@ -43,7 +42,6 @@ const TakeOrders = (props) => {
       setArrayOrder([...arrayOrder, { ...newProducto, qty: 1, total: newProducto.price }]);
     }
   }
-
   const sendPostOrders = () => {
     const token = localStorage.getItem('token');
     const email = localStorage.getItem('email');
@@ -62,23 +60,22 @@ const TakeOrders = (props) => {
      })
     });
   }
-
   return (
   <div> 
     <Header props={props}/>
-    <main>
+    <main >
     <Clientname name={name} updateName={updateName} />
-    <div> 
+    <section className="products-container"> 
         <button
           className="btn-break-dinner"
           onClick= {() => setType('desayuno') }>Desayuno</button>
         <button  
           className="btn-break-dinner"
           onClick= {() => setType('almuerzo') }>Almuerzo</    button>
-        <div>
+        <div className="subproducts-container">
            <ListProducts  type={type} data={productData} addProduct={addProduct} />
         </div>
-    </div>
+    </section>
     <div>
       <Take arrayOrder={arrayOrder} name={name}  setArrayOrder={setArrayOrder}  total={total} setTotal={setTotal} sendPostOrders={sendPostOrders}/>
     </div>

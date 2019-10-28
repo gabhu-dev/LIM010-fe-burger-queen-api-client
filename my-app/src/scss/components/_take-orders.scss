@@ -1,0 +1,27 @@
+@import 'mixings';
+.products-container{
+margin: 2em;
+background-color:#E0E3E4;
+}
+.btn-break-dinner{
+@include btn(#F29A2E, 25%, 2em, white);
+letter-spacing: 0.2rem;
+transition: 0.3s opacity ease;
+font-size: 0.9em;
+margin: 0.8em;
+}
+.btn-break-dinner:hover{
+  opacity: 0.6;
+}
+.subproducts-container{
+  width: 90%;
+  padding: 2em;
+  display: flex;
+  flex-flow: row wrap;
+ background-color: #EBEFF1;
+}
+main{
+  background-color:#E0E3E4;
+  @include flex-col-row(column);
+  align-items: center;
+}

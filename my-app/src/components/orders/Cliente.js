@@ -7,7 +7,7 @@ const Clientname = ({ name, updateName}) => {
   }
 
   return (
-    <form onSubmit={onSubmit} className="" >
+    <form onSubmit={onSubmit} className="form-cliente" >
       <label className="">Cliente: </label>
       <>
           <input

@@ -33,11 +33,12 @@ const Login = (props) => {
 
   return (
   <div className="login column white calibri" id="login">
-    <img className="logo" src={logo} alt="logo burger queen"/>
-    <p>¡Tu comida favorita!</p>
-      <form className="column">
+   
+      <form className="column form-login">
+      <img className="logo" src={logo} alt="logo burger queen"/>
+    <p className="message-logo">¡El placer en tus manos!</p>
         <input 
-          className="pink"
+          className="pink input-form"
           value= {email}
           onChange= {handleEmailChange}  
           name="email" 
@@ -46,7 +47,7 @@ const Login = (props) => {
           data-testid="email"
         />
         <input 
-          className="pink"
+          className="pink input-form"
           value={password}
           onChange= {handlePassChange} 
           name="password"
@@ -63,7 +64,7 @@ const Login = (props) => {
         > 
         INGRESA
         </button>
-        {err && <p data-testid="mensajeError"className='error-message'>{err}</p>}
+        {err && <p data-testid="mensajeError"className='error-message'>&#10007;  {err}</p>}
       </form>
   </div>
   );

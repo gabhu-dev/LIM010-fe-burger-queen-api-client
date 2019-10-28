@@ -1,5 +1,5 @@
 import React from 'react';
-
+import getOrder from '../../controller/orders/add-order';
 
 const Take = ({ arrayOrder, name, setName, setArrayOrder, total, setTotal, sendPostOrders}) => {
   const remove = (chosenProduct) => {
@@ -10,7 +10,7 @@ const Take = ({ arrayOrder, name, setName, setArrayOrder, total, setTotal, sendP
     const neto = arrayOrder.reduce((a, b) => (a + b.total), 0);
     return setTotal(neto);
   }
-  
+
   return (
     <>
     <div className="">
