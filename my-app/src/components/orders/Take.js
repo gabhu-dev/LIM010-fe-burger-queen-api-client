@@ -1,7 +1,7 @@
 import React from 'react';
-import postOrders from '../../controller/orders/orders';
 
-const Take = ({ arrayOrder, name, setArrayOrder, total, setTotal }) => {
+
+const Take = ({ arrayOrder, name, setName, setArrayOrder, total, setTotal, sendPostOrders}) => {
   const remove = (chosenProduct) => {
     const arrayProductRemove = arrayOrder.filter(product => product.name !== chosenProduct)
     return setArrayOrder(arrayProductRemove);
@@ -10,18 +10,9 @@ const Take = ({ arrayOrder, name, setArrayOrder, total, setTotal }) => {
     const neto = arrayOrder.reduce((a, b) => (a + b.total), 0);
     return setTotal(neto);
   }
-  const  send = () => {
-    const token = localStorage.getItem('token');
-    const products = arrayOrder.map((element) => ({producto: element.name, cantidad: element.qty, total:element.total}));
-    console.log(products);
-    postOrders(name, products, token)
-    .then((result)=>{
-      console.log(result);
-        })
-    .catch(console.error)
-  }
+  
   return (
-    <React.Fragment>
+    <>
     <div className="">
       <form className="">
         <h1>ORDEN</h1>
@@ -39,7 +30,7 @@ const Take = ({ arrayOrder, name, setArrayOrder, total, setTotal }) => {
             <tbody>
               {arrayOrder.map(prod => (
                 <tr key={prod.name}>
-                  <td> <input type="number" min="1" max="10" value={prod.qty}></input></td>
+                  <td>{prod.qty}</td>
                   <td>{prod.name}</td>
                   <td>S/.{prod.price}</td>
                   <td>S/.{prod.total}</td>
@@ -50,14 +41,14 @@ const Take = ({ arrayOrder, name, setArrayOrder, total, setTotal }) => {
               ))}
             </tbody>
           </table>
-          <label>TOTAL<textarea onChange={takeTotal()} value={total} /></label>
+          <label>TOTAL<input onChange={takeTotal()} /> S/. {total}.00 </label>
         </div>
         <div>
-          <button  onClick={() => { send(name) }}>ENVIAR PEDIDO</button>
+        <button  onClick={(e) => sendPostOrders(e.preventDefault())}>ENVIAR PEDIDO</button>
         </div>
       </form>
     </div>
-  </React.Fragment>
+  </>
   )
 }
 export default Take;

@@ -23,6 +23,7 @@ const Login = (props) => {
   } else{
     getToken(email, password).then((res) => {
       localStorage.setItem('token', res.token)
+      localStorage.setItem('email', email)
       history.push('/take-orders')
     }).catch((err) => {
         setErr(err.message)

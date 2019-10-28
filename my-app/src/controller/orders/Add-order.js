@@ -1,17 +1,16 @@
 // crea una nueva orden
 // crea una nueva orden
-const getOrder = (userId, client, products, productId, quantity)=>{
+const postOrder = (token, userId, client, products)=>{
   return fetch('http://localhost:5000/orders',{
     method:'POST',
     headers:{
-      'Content-Type':'application/json'
+      'Content-Type':'application/json',
+      'Authorization': 'Bearer ' + token
     },
     body:{
       userId,
       client,
-      products,
-      productId,
-      quantity
+      products
     },
   }).then((res)=>{
     if(res.status === 200){
@@ -23,3 +22,4 @@ const getOrder = (userId, client, products, productId, quantity)=>{
     }
   })
 }
+export default postOrder;

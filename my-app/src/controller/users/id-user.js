@@ -17,3 +17,4 @@ const getSpecificUser = (token, idUser) => {
     }
   })
 };
+export default getSpecificUser;
