@@ -1,8 +1,8 @@
 import React from 'react';
 import { render, fireEvent, waitForElement, act } from '@testing-library/react'
-import Login from '../../../components/login/Login';
-import { history } from '../../utils';
-import getToken from '../../../controller/login-controller/Token';
+import Login from '../../components/login/Login';
+import { history } from '../utils';
+import getToken from '../../controller/login-controller/Token';
 const fetchMock = require( 'fetch-mock' );
  
 const url = '/'
