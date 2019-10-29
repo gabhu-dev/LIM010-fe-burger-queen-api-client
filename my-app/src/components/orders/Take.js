@@ -1,7 +1,7 @@
 import React from 'react';
-import getOrder from '../../controller/orders/add-order';
 
-const Take = ({ arrayOrder, name, setName, setArrayOrder, total, setTotal, sendPostOrders}) => {
+
+const Take = ({ arrayOrder, name, setArrayOrder, total, setTotal, sendPostOrders}) => {
   const remove = (chosenProduct) => {
     const arrayProductRemove = arrayOrder.filter(product => product.name !== chosenProduct)
     return setArrayOrder(arrayProductRemove);
@@ -41,7 +41,7 @@ const Take = ({ arrayOrder, name, setName, setArrayOrder, total, setTotal, sendP
               ))}
             </tbody>
           </table>
-          <label>TOTAL<input onChange={takeTotal()} /> S/. {total}.00 </label>
+          <label onChange={takeTotal()}> TOTAL S/. {total}.00  </label>
         </div>
         <div>
         <button  onClick={(e) => sendPostOrders(e.preventDefault())}>ENVIAR PEDIDO</button>

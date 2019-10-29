@@ -7,7 +7,7 @@ import Clientname from './Cliente';
 import ListProducts from '../products/ListProducts';
 import Take from './Take';
 import postOrder from '../../controller/orders/add-order';
-import getSpecificUser  from '../../controller/users/Id-user';
+import getSpecificUser  from '../../controller/users/id-user';
 
 
 const TakeOrders = (props) => {
@@ -30,6 +30,7 @@ const TakeOrders = (props) => {
       const newArray =arrayOrder.map((product) => {
         if(product.name ===newProducto.name) {
           product.qty = product.qty +1;
+          product.total = product.price*product.qty
           return(
             product
           )
@@ -45,18 +46,16 @@ const TakeOrders = (props) => {
   const sendPostOrders = () => {
     const token = localStorage.getItem('token');
     const email = localStorage.getItem('email');
-    console.log(arrayOrder.map(elem => ({ product: elem._id, qty: elem.qty })));
     getSpecificUser (token,email)
-    .then((res) => {
+    .then((resp) => {
      postOrder(
        token,
-       res._id, 
+       resp._id, 
        name, 
        arrayOrder.map(elem => ({ product: elem._id, qty: elem.qty })))
-     .then((res) =>{
-      console.log(res)
-      // setName('');
-      // setArrayOrder([]);
+       .then((res) =>{
+      setName('');
+      setArrayOrder([]);
      })
     });
   }
