@@ -23,4 +23,3 @@ const postOrder = (token, userId, client, products)=>{
   })
 }
 export default postOrder;
-
