@@ -1,8 +1,8 @@
 import React from 'react';
 import { render, fireEvent, waitForElement, act } from '@testing-library/react'
 import Login from '../../components/login/Login';
-import { history } from '../utils';
-import getToken from '../../controller/login-controller/Token';
+import { history } from '../../utils';
+import getToken from '../../../controller/login-controller/token';
 const fetchMock = require( 'fetch-mock' );
  
 const url = '/'
@@ -10,9 +10,9 @@ test('it should check the empty input - route', async () => {
  const { getByTestId, queryByTestId } = render(<Login url={url} />)
   
   expect(queryByTestId('mensajeError')).toBe(null);
-
+  act(() => {
   fireEvent.click(getByTestId('botonSubmit'))
-
+  })
   const mensajeError = await waitForElement(() =>
     getByTestId('mensajeError')
   )
@@ -38,7 +38,9 @@ afterEach(() => {
 it("Funtion getToken", async (done) => {
   fetchMock
     .post('http://localhost:5000/auth', { status: 200, body: { token: 'ok' } });
+    
     const { getByTestId } = render(<Login url={url} />);
+    
     act(() => {
       fireEvent.change(getByTestId('email'), { target: { value: 'admin@burgerqueen.com' } })
       fireEvent.change(getByTestId('password'), { target: { value: '12345678' } })
