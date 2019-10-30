@@ -17,8 +17,8 @@ const postOrder = (token, userId, client, products)=>{
       return res.json()
     }else if(res.status === 400){
       return Promise.reject({message: 'Ingrese productos'})
-    }else if (res.status === 401){
-      return Promise.reject({message : 'ingrese cabecera'})
+    }else {
+      return Promise.reject({message : 'No existe autentificación'})
     }
   })
 }

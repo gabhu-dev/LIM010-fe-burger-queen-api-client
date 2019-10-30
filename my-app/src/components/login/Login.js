@@ -64,7 +64,7 @@ const Login = (props) => {
         > 
         INGRESA
         </button>
-        {err && <p data-testid="mensajeError"className='error-message'>&#10007;  {err}</p>}
+        {err && <p data-testid="mensajeError"className='error-message'>{err}</p>}
       </form>
   </div>
   );

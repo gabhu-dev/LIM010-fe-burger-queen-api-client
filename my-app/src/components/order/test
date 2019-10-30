@@ -1,0 +1,132 @@
+
+it('testing prods', async () => {
+
+  const { getByTestId, getByPlaceholderText } = renderWithRouter(<Products />);
+
+  const clientName = await getByPlaceholderText('Nombre')
+  expect(clientName.value).toBe('');
+  act(() => {
+    fireEvent.change(clientName, { target: { value: 'Mariano' } });
+  })
+  expect(clientName.value).toBe('Mariano');
+
+  try {
+    getByTestId('edit')
+  } catch (e) {
+    expect(e.message.startsWith('Unable to find an element by: [data-testid=\"edit\"]')).toBe(true)
+  }
+
+  act(() => {
+    fireEvent.click(getByTestId('submit'))
+  })
+  const editName = await waitForElement(() => getByTestId('change-name'))
+
+  expect(editName.textContent).toBe('Mariano');
+
+  act(() => {
+    fireEvent.click(getByTestId('edit'))
+  })
+  await waitForElement(() => clientName)
+  expect(clientName.value).toBe('Mariano');
+})
+
+it('testing post prods', async (done) => {
+  const { getByTestId, getByPlaceholderText } = renderWithRouter(<Products />);
+
+  await waitForElement(() => getByTestId('1'))
+  act(() => {
+    fireEvent.click(getByTestId('1'))
+  })
+  await waitForElement(() => getByTestId('list-1'))
+
+  expect(getByTestId('list-Café americano').textContent).toBe('Café americano');
+
+  const clientName = getByPlaceholderText('Nombre')
+
+  expect(clientName.value).toBe('');
+  act(() => {
+    fireEvent.change(clientName, { target: { value: 'Mariano' } });
+  })
+  expect(clientName.value).toBe('Mariano');
+  act(() => {
+    fireEvent.click(getByTestId('submit'))
+  })
+  await waitForElement(() => getByTestId('edit'))
+
+  act(() => {
+    fireEvent.click(getByTestId('post-order'))
+  })
+
+  await waitForElement(() => clientName)
+  setTimeout(() => {
+    expect(clientName.value).toBe('');
+    done();
+  }, 1000)
+
+})
+
+it('add qty of prods', async () => {
+  const { getByTestId } = renderWithRouter(<Products />);
+
+  await waitForElement(() => getByTestId('1'))
+  act(() => {
+    fireEvent.click(getByTestId('1'))
+  })
+  await waitForElement(() => getByTestId('list-1'))
+
+  expect(getByTestId('list-Café americano').textContent).toBe('Café americano');
+  expect(getByTestId('qty').textContent).toBe('1');
+
+  act(() => {
+    fireEvent.click(getByTestId('addQty'))
+  })
+  expect(getByTestId('qty').textContent).toBe('2');
+
+})
+
+it('take qty of prods', async () => {
+  const { getByTestId } = renderWithRouter(<Products />);
+
+  await waitForElement(() => getByTestId('1'))
+  act(() => {
+    fireEvent.click(getByTestId('1'))
+  })
+  await waitForElement(() => getByTestId('list-1'))
+
+  expect(getByTestId('list-Café americano').textContent).toBe('Café americano');
+  expect(getByTestId('qty').textContent).toBe('1');
+
+  act(() => {
+    fireEvent.click(getByTestId('addQty'))
+  })
+  expect(getByTestId('qty').textContent).toBe('2');
+
+  act(() => {
+    fireEvent.click(getByTestId('takeQty'))
+  })
+  expect(getByTestId('qty').textContent).toBe('1');
+
+})
+
+it(' del prods', async () => {
+  const { getByTestId } = renderWithRouter(<Products />);
+
+  await waitForElement(() => getByTestId('1'))
+  act(() => {
+    fireEvent.click(getByTestId('1'))
+  })
+  await waitForElement(() => getByTestId('list-1'))
+
+  expect(getByTestId('list-Café americano').textContent).toBe('Café americano');
+  expect(getByTestId('qty').textContent).toBe('1');
+
+  act(() => {
+    fireEvent.click(getByTestId('deleteItem'))
+  })
+
+  try {
+    getByTestId('list-Café americano')
+  } catch (e) {
+    expect(e.message.startsWith('Unable to find an element by: [data-testid=\"list-Café americano\"]')).toBe(true)
+  }
+})

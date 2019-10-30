@@ -4,7 +4,7 @@ import Header from './Header';
 import React, {useState, useEffect} from 'react';
 import getProducts from '../../controller/products/products'; 
 import Clientname from './Cliente';
-import ListProducts from '../products/ListProducts';
+import ListProducts from './ListProducts';
 import Take from './Take';
 import postOrder from '../../controller/orders/add-order';
 import getSpecificUser  from '../../controller/users/id-user';
@@ -12,6 +12,7 @@ import getSpecificUser  from '../../controller/users/id-user';
 
 const TakeOrders = (props) => {
   const [name, setName] = useState("");
+  const [show, setShow] = useState(true);
   const [productData, setProductData]=useState([]);
   const [type, setType] = useState("desayuno");
   const [arrayOrder, setArrayOrder]= useState([]);
@@ -63,7 +64,7 @@ const TakeOrders = (props) => {
   <div> 
     <Header props={props}/>
     <main >
-    <Clientname name={name} updateName={updateName} />
+    <Clientname name={name} updateName={updateName} show={show} setShow={setShow} />
     <section className="products-container"> 
         <button
           className="btn-break-dinner"
