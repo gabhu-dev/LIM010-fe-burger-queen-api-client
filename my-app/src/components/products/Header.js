@@ -10,11 +10,12 @@ const Header = ({ props }) => {
         <nav className="nav">
           <ul className= "column">
             <li>  <Link className="link" to ="/take-orders">Pedidos</Link></li>
-            <li>  <Link className="link" to ="/take-orders">Listos</Link></li>
-            <li>  <Link className="link"to ="/">Cerrar sesión</Link></li>
+            <li>  <Link className="link" to ="/view-orders">Órdenes</Link></li>
+            <li>  <Link className="link" to="/Cocinero">Cocina</Link></li>
+            <li>  <Link className="link" to="/Administrador">Admin</Link></li>
+            <li>  <Link className="link" to ="/">Cerrar sesión</Link></li>
           </ul>
         </nav>
-      
     </div>
   )
 };

@@ -218,12 +218,13 @@ body {
   .form-login {
     width: 60%;
     background-color: rgba(13, 13, 13, 0.5); } }
+  
 
 @media screen and (min-width: 1024px) {
   .form-login {
     width: 40%; }
   .header label {
-    display: none; }
+    display: block; }
   .nav {
     margin: 0;
     width: 100%;

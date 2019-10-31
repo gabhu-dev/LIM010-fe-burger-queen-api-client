@@ -38,9 +38,7 @@ afterEach(() => {
 it("Funtion getToken", async (done) => {
   fetchMock
     .post('http://localhost:5000/auth', { status: 200, body: { token: 'ok' } });
-    
-    const { getByTestId } = render(<Login url={url} />);
-    
+    const { getByTestId } = render(<Login url={url} />); //pendiente acc(()=>{})
     act(() => {
       fireEvent.change(getByTestId('email'), { target: { value: 'admin@burgerqueen.com' } })
       fireEvent.change(getByTestId('password'), { target: { value: '12345678' } })
