@@ -15,7 +15,11 @@ import React from 'react';
 //       <button>egegegeg</button>
 //     )}
 import deleteUsers from '../../controller/users/delete-user';
-const ListUsers= ({data}) => {
+const ListUsers= ({data, email, setdata}) => {
+  const remove = (choosenUser) => {
+    const arrayUserRemove = data.filter(user => user.email !== choosenUser)
+    return setdata
+  }
   const handleDeleteUser = (e) =>{
     e.preventDefault();
     deleteUsers(localStorage.getItem('token'),data[0]._id)
@@ -28,7 +32,7 @@ return data.map(users => (
   <tr className="hu" key={users._id} >
     {/* <h4>{users.email}</h4> */}
         <td>{users.email}</td>  
-        <td><button onClick = {handleDeleteUser}><i className="far fa-edit"></i></button></td>    
+        <td><button type = "button" value = {users._id} onClick = {remove(users.email)}><i className="far fa-edit"></i></button></td>    
         <td><i className="far fa-trash-alt"></i></td>      
   </tr>
  ))
