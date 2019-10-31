@@ -1,7 +1,7 @@
 // crea una nueva usuaria
 // Requiere token de autenticación y que la usuaria sea admin
 
-const getUsers = (token, admin)=>{
+const getUsers = (token)=>{
   return fetch('http://localhost:5000/users',{
     method:'GET',
     headers:{

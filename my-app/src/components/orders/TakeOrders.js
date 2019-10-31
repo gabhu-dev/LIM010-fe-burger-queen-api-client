@@ -12,6 +12,7 @@ import getSpecificUser  from '../../controller/users/id-user';
 
 const TakeOrders = (props) => {
   const [name, setName] = useState("");
+  const [show, setShow] = useState(true);
   const [productData, setProductData]=useState([]);
   const [type, setType] = useState("desayuno");
   const [arrayOrder, setArrayOrder]= useState([]);
@@ -48,12 +49,14 @@ const TakeOrders = (props) => {
     const email = localStorage.getItem('email');
     getSpecificUser (token,email)
     .then((resp) => {
+      console.log(resp);
      postOrder(
        token,
        resp._id, 
        name, 
        arrayOrder.map(elem => ({ product: elem._id, qty: elem.qty })))
        .then((res) =>{
+         console.log(res);
       setName('');
       setArrayOrder([]);
      })
@@ -63,14 +66,14 @@ const TakeOrders = (props) => {
   <div> 
     <Header props={props}/>
     <main >
-    <Clientname name={name} updateName={updateName} />
+    <Clientname name={name} updateName={updateName} show={show} setShow={setShow}/>
     <section className="products-container"> 
         <button
           className="btn-break-dinner"
           onClick= {() => setType('desayuno') }>Desayuno</button>
         <button  
           className="btn-break-dinner"
-          onClick= {() => setType('almuerzo') }>Almuerzo</    button>
+          onClick= {() => setType('almuerzo') }>Almuerzo</button>
         <div className="subproducts-container">
            <ListProducts  type={type} data={productData} addProduct={addProduct} />
         </div>

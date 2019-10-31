@@ -2,6 +2,7 @@ import React, { useState} from 'react';
 import '../../css/styles.css';
 import logo from '../../css/img/logo.png';
 import getToken from '../../controller/login-controller/token';
+import getSpecificUser from '../../controller/users/id-user';
 
 const Login = (props) => {
   const { history } = props;
@@ -22,9 +23,18 @@ const Login = (props) => {
     setErr('Ingresa Email y Contraseña')
   } else{
     getToken(email, password).then((res) => {
-      localStorage.setItem('token', res.token)
-      localStorage.setItem('email', email)
-      history.push('/take-orders')
+      const token = localStorage.setItem('token', res.token);
+      const emailUser= localStorage.setItem('email', email);
+      getSpecificUser(token,emailUser)
+      .then(response => {
+        if(!response.roles.admin){
+          history.push('/take-orders')
+        }else{
+          // return console.log('es tuyp wey')
+          history.push('/view-admin')
+        }
+      })
+    
     }).catch((err) => {
         setErr(err.message)
       });
