@@ -13,7 +13,9 @@ const ViewAdmin = (props) =>{
   return(
     <div>
       <Header/>
+      <table>
       <ListUsers data={usersData}/>
+      </table>
     </div>
   )
 }
