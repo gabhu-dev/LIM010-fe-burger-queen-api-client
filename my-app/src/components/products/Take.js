@@ -35,7 +35,7 @@ const Take = ({ arrayOrder, name, setArrayOrder, total, setTotal, sendPostOrders
                   <td>S/.{prod.price}</td>
                   <td>S/.{prod.total}</td>
                   <td>
-                    <button type="button" value={prod._id} className="btn" onClick={() => {remove(prod.name) }}>x</button>
+                    <button type="button" value={prod._id} className="btn" onClick={() => {remove(prod.name) }}><i class="fas fa-trash"></i></button>
                   </td>
                 </tr>          
               ))}

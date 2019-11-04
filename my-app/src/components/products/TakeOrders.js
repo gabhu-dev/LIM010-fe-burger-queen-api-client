@@ -4,7 +4,7 @@ import Header from './Header';
 import React, {useState, useEffect} from 'react';
 import getProducts from '../../controller/products/products'; 
 import Clientname from './Cliente';
-import ListProducts from '../products/ListProducts';
+import ListProducts from './ListProducts';
 import Take from './Take';
 import postOrder from '../../controller/orders/add-order';
 import getSpecificUser  from '../../controller/users/id-user';
@@ -26,6 +26,7 @@ const TakeOrders = (props) => {
     getProducts(token)
     .then(res=> setProductData(res));
   }, [])
+  console.log(productData);
    const addProduct = (newProducto)=>{
     if(arrayOrder.find((element)=> element.name === newProducto.name)){
       const newArray =arrayOrder.map((product) => {
@@ -49,14 +50,12 @@ const TakeOrders = (props) => {
     const email = localStorage.getItem('email');
     getSpecificUser (token,email)
     .then((resp) => {
-      console.log(resp);
      postOrder(
        token,
        resp._id, 
        name, 
        arrayOrder.map(elem => ({ product: elem._id, qty: elem.qty })))
        .then((res) =>{
-         console.log(res);
       setName('');
       setArrayOrder([]);
      })
@@ -66,14 +65,14 @@ const TakeOrders = (props) => {
   <div> 
     <Header props={props}/>
     <main >
-    <Clientname name={name} updateName={updateName} show={show} setShow={setShow}/>
+    <Clientname name={name} updateName={updateName} show={show} setShow={setShow} />
     <section className="products-container"> 
         <button
           className="btn-break-dinner"
           onClick= {() => setType('desayuno') }>Desayuno</button>
         <button  
           className="btn-break-dinner"
-          onClick= {() => setType('almuerzo') }>Almuerzo</button>
+          onClick= {() => setType('almuerzo') }>Almuerzo</    button>
         <div className="subproducts-container">
            <ListProducts  type={type} data={productData} addProduct={addProduct} />
         </div>

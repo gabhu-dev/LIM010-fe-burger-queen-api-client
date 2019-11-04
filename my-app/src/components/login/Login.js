@@ -18,9 +18,11 @@ const Login = (props) => {
   }
   
  const handlebtn = (e) => {
-  e.preventDefault()
+  e.preventDefault();
+ 
   if(!email || !password) {
     setErr('Ingresa Email y Contraseña')
+
   } else{
     getToken(email, password).then((res) => {
       const token = localStorage.setItem('token', res.token);
@@ -30,7 +32,6 @@ const Login = (props) => {
         if(!response.roles.admin){
           history.push('/take-orders')
         }else{
-          // return console.log('es tuyp wey')
           history.push('/view-admin')
         }
       })

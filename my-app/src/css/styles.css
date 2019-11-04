@@ -112,8 +112,7 @@
   display: none; }
 
 .header {
-  background: #F2AC29;
-  width: 48em; }
+  background: #F2AC29; }
   .header label {
     display: inline-block;
     font-size: 2em;
@@ -122,6 +121,9 @@
     height: 50px;
     padding: 10px;
     border-right: 1px solid #fff; }
+  .header .crown {
+    margin-left: 30%;
+    margin-right: 30%; }
   .header .nav {
     background-color: #F2AC29;
     width: 100%;
@@ -153,22 +155,29 @@
 #btn-menu:checked ~ .nav {
   margin: 0; }
 
-.product {
-  margin: 1em;
-  width: 10em;
-  height: 12em;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  border: 1px solid grey; }
+.product-img {
+  width: 100%;
+  height: 70%; }
 
-.nav-img {
-  width: 8em;
-  height: 8em; }
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  width: 30%;
+  margin-bottom: 5%;
+  background-color: #EBEFF1; }
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2); }
+
+.container {
+  padding: 2px 16px; }
+
+.price {
+  padding: 10px; }
 
 .products-container {
   margin: 2em;
-  background-color: #E0E3E4; }
+  background-color: #e0e3e42e; }
 
 .btn-break-dinner {
   background-color: #F29A2E;
@@ -191,10 +200,12 @@
   padding: 2em;
   display: flex;
   flex-flow: row wrap;
-  background-color: #EBEFF1; }
+  justify-content: space-around;
+  background-color: #ebeff13d; }
 
 main {
-  background-color: #E0E3E4;
+  background-image: url(img/burger-2.jpg);
+  background-size: contain;
   display: flex;
   flex-direction: column;
   align-items: center; }
