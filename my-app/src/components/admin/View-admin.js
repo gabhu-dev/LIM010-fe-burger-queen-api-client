@@ -6,12 +6,20 @@ import ListUsers from './users/List-users';
 
 const ViewAdmin = (props) =>{
   const [usersData, setUsersData] = useState([]);
-  useEffect(()=>{
+  
+  const getData = () =>{
     const token = localStorage.getItem('token');
     getUsers(token)
     .then(res => setUsersData(res));
+    console.log('sal')
+  }
+  useEffect(()=>{
+    setInterval(getData,3000);
+    // const token = localStorage.getItem('token');
+    // getUsers(token)
+    // .then(res => setUsersData(res));
   },[])
-  console.log(usersData);
+ 
   return(
     <div>
       <Header/>
