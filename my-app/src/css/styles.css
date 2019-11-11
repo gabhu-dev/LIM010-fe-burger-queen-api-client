@@ -217,6 +217,90 @@ main {
   height: 3em;
   background-color: #EBEFF1; }
 
+.container-table {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+  width: 100%;
+  height: 50em; }
+
+.sub-container-table {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  padding: 15px;
+  box-shadow: 2px 2px 10px #666;
+  margin: 6px; }
+
+.table-list {
+  border-collapse: collapse;
+  width: 90%;
+  border: 1px solid violet; }
+
+.table-list th, .table-list td {
+  border: 1px solid #ddd;
+  padding: 8px; }
+
+.table-list tr:nth-child(even) {
+  background-color: #f2f2f2; }
+
+.table-list tr:hover {
+  background-color: #ddd; }
+
+.table-list th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #BF7C41;
+  color: white; }
+
+.button {
+  width: max-content;
+  border: none;
+  border-radius: 1em;
+  padding: .5em;
+  cursor: pointer;
+  margin: 10px; }
+
+.button :hover {
+  color: #BF7C41; }
+
+.modal {
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(27, 28, 29, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+.form-user {
+  background-color: beige;
+  width: 50%;
+  height: 50%;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column; }
+
+.close {
+  float: right; }
+
+.input-user {
+  margin: 1em;
+  padding: 5px; }
+
 body {
   margin: 0;
   font-family: 'Quattrocento Sans', sans-serif; }

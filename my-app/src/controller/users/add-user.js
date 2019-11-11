@@ -1,5 +1,5 @@
 // crear una usuaria
-const addUser = (token, email, password, admin) => {
+const addUser = (token, email, password) => {
   return fetch('http://localhost:5000/users', {
     method: 'POST',
     headers: {
@@ -8,8 +8,7 @@ const addUser = (token, email, password, admin) => {
     },
     body: { 
       email, 
-      password,
-      admin 
+      password
     },
   }).then((resp) => {
     if (resp.status === 200) {

@@ -3,6 +3,7 @@ import Login from './components/login/Login';
 import TakeOrders from './components/products/TakeOrders';
 import ViewOrders from './components/order/ViewOrders';
 import ViewAdmin from './components/admin/View-admin';
+import ViewAdminProductos from './components/admin/products/View-admin-products';
 import {
   BrowserRouter as Router,
   Switch,
@@ -17,6 +18,8 @@ function App() {
       <Route exact path="/view-orders"> <ViewOrders />
       </Route>
       <Route exact path="/view-admin"> <ViewAdmin />
+      </Route>
+      <Route exact path="/view-admin-productos"> <ViewAdminProductos />
       </Route>
       <Route exact path="/" component={Login} />
     </Switch>
