@@ -1,6 +1,6 @@
 // Requiere token de autenticación y que la usuaria sea admin
 // crear un producto
-const addProduct = (token, name, price, admin) => {
+const addProduct = (token, name, price) => {
   return fetch('http://localhost:5000/products', {
     method: 'POST',
     headers: {
@@ -8,10 +8,8 @@ const addProduct = (token, name, price, admin) => {
      'Authorization': 'Bearer ' + token
     },
     body: { 
-      email, 
       name,
-      price,
-      admin 
+      price
     },
   }).then((resp) => {
     if (resp.status === 200) {

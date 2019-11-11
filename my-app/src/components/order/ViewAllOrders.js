@@ -23,10 +23,6 @@ const ViewAllOrders = (props) => {
       <Header props={props} />
       <div className="w-100">
         <section className="subproducts-container">
-          {orders.length === 0 &&
-            <div className="mt-5 w-100 text-align">
-              No hay órdenes pendientes.
-            </div>}
           {orders.length !== 0 &&
             orders.map(el => {
                 return <OrderCard order={el} key={el._id} />
