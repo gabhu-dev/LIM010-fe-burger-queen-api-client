@@ -26,6 +26,7 @@ const TakeOrders = (props) => {
     getProducts(token)
     .then(res=> setProductData(res));
   }, [])
+  console.log(productData);
    const addProduct = (newProducto)=>{
     if(arrayOrder.find((element)=> element.name === newProducto.name)){
       const newArray =arrayOrder.map((product) => {
@@ -57,15 +58,16 @@ const TakeOrders = (props) => {
        .then((res) =>{
       setName('');
       setArrayOrder([]);
+      setShow(true);
      })
     });
   }
   return (
   <div> 
     <Header props={props}/>
-    <main >
-    <Clientname name={name} updateName={updateName} show={show} setShow={setShow} />
-    <section className="products-container"> 
+    <main className='column' >
+      <Clientname name={name} updateName={updateName} show={show} setShow={setShow} />
+      <section className="products-container"> 
         <button
           className="btn-break-dinner"
           onClick= {() => setType('desayuno') }>Desayuno</button>
@@ -75,10 +77,10 @@ const TakeOrders = (props) => {
         <div className="subproducts-container">
            <ListProducts  type={type} data={productData} addProduct={addProduct} />
         </div>
-    </section>
-    <div>
-      <Take arrayOrder={arrayOrder} name={name}  setArrayOrder={setArrayOrder}  total={total} setTotal={setTotal} sendPostOrders={sendPostOrders}/>
-    </div>
+      </section>
+      <section className="products-container">
+        <Take arrayOrder={arrayOrder} name={name}  setArrayOrder={setArrayOrder}  total={total} setTotal={setTotal} sendPostOrders={sendPostOrders}/>
+      </section>
     </main>
   </div>
 )

@@ -9,11 +9,9 @@ const getProducts = (token)=>{
   }).then((res)=>{
     if (res.status === 200) {
       return res.json()
-    } else if (res.status === 401) {
+    } else {
       return Promise.reject({ message: 'No existe token válido' })
-    } else{
-    return Promise.reject({ message: res.statusText })
-  }
+    }
 })
 }
 export default getProducts;

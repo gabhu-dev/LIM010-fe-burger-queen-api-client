@@ -12,14 +12,12 @@ const Take = ({ arrayOrder, name, setArrayOrder, total, setTotal, sendPostOrders
   }
 
   return (
-    <>
-    <div className="">
-      <form className="">
+      <form className='take-container' >
         <h1>ORDEN</h1>
-        <label className="">Cliente: &nbsp;{name}</label>
+        <label  className='border-top font-size-15's>Cliente: &nbsp;{name}</label>
         <div>
-          <table className="">
-            <thead className="">
+          <table>
+            <thead className="font-size-15">
               <tr className="">
                 <th>Cantidad</th>
                 <th>Producto</th>
@@ -29,26 +27,28 @@ const Take = ({ arrayOrder, name, setArrayOrder, total, setTotal, sendPostOrders
             </thead>
             <tbody>
               {arrayOrder.map(prod => (
-                <tr key={prod.name}>
+                <tr key={prod.name} className='border-top margin-1 font-size-1'>
                   <td>{prod.qty}</td>
                   <td>{prod.name}</td>
                   <td>S/.{prod.price}</td>
                   <td>S/.{prod.total}</td>
                   <td>
-                    <button type="button" value={prod._id} className="btn" onClick={() => {remove(prod.name) }}>x</button>
+                    <button type="button" value={prod._id} className="btn" onClick={() => {remove(prod.name) }}><i class="fas fa-trash"></i></button>
                   </td>
                 </tr>          
               ))}
             </tbody>
           </table>
-          <label onChange={takeTotal()}> TOTAL S/. {total}.00  </label>
         </div>
-        <div>
-        <button  onClick={(e) => sendPostOrders(e.preventDefault())}>ENVIAR PEDIDO</button>
+        <div className='margin-1'>
+          <div>
+            <label className='border-top font-size-15' onChange={takeTotal()}><b>TOTAL S/. {total}.00  </b></label>
+          </div>
+          <div>
+            <button  className=' font-size-15' onClick={(e) => sendPostOrders(e.preventDefault())}>ENVIAR PEDIDO</button>
+          </div>
         </div>
       </form>
-    </div>
-  </>
   )
 }
 export default Take;

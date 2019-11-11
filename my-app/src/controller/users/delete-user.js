@@ -4,7 +4,7 @@ const deleteUser = (token, id) => {
     method: 'DELETE',
     headers: {
       'Content-Type': 'application/json',
-      'Authorization': 'Bearer' + token
+      'authorization': 'Bearer' + token 
     }
   }).then((res) => {
     if (res.status === 200) {
