@@ -30,9 +30,9 @@ const Login = (props) => {
       getSpecificUser(token,emailUser)
       .then(response => {
         if(!response.roles.admin){
-          history.push('/take-orders')
+          history.replace('/take-orders')
         }else{
-          history.push('/view-admin')
+          history.replace('/view-admin')
         }
       })
     

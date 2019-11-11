@@ -31,9 +31,9 @@ const OrderCard = ({ order }) => {
   }, [active, timer])
 
   return (
-      <div key={order._id} className="column border-top">
+      <div key={order._id} className="column border-top margin-1">
         <div className="text-center font-size-1 margin-1">
-          Cliente: {order.client}
+         <b>Cliente: {order.client}</b> 
         </div>
         <div>
         Fecha: {order.dateEntry}

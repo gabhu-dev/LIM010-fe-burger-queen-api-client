@@ -1,8 +1,9 @@
 import React from 'react';
 import Login from './components/login/Login';
 import TakeOrders from './components/products/TakeOrders';
-import ViewOrders from './components/order/ViewOrders';
-import ViewAdmin from './components/admin/view-admin';
+import Cocina from './components/order/ViewOrders';
+import ViewAllOrders from './components/order/ViewAllOrders';
+import ViewAdmin from './components/admin/View-admin';
 import {
   BrowserRouter as Router,
   Switch,
@@ -14,7 +15,9 @@ function App() {
     <Switch>
       <Route exact path="/take-orders"> <TakeOrders />
       </Route>
-      <Route exact path="/view-orders"> <ViewOrders />
+      <Route exact path="/cocina"> <Cocina />
+      </Route>
+      <Route exact path="/view-all-Orders"> <ViewAllOrders />
       </Route>
       <Route exact path="/view-admin"> <ViewAdmin />
       </Route>

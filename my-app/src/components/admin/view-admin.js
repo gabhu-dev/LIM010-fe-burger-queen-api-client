@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import Header from '../products/Header';
+import HeaderAdmin from './Header-admin';
 import getUsers from '../../controller/users/users';
 import ListUsers from './users/List-users';
 
@@ -22,7 +22,7 @@ const ViewAdmin = (props) =>{
  
   return(
     <div>
-      <Header/>
+      <HeaderAdmin/>
       <table>
       < tbody > 
       <tr>

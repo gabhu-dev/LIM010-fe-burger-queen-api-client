@@ -1,8 +1,7 @@
-
 import React from 'react';
 import {Link} from 'react-router-dom';
 import crown from '../../css/img/crown-2.png';
-const Header = ({ props }) => {
+const HeaderAdmin = ({ props }) => {
   return (
     <div className="header">
         <input type="checkbox" className= "hide" id="btn-menu" />
@@ -11,9 +10,8 @@ const Header = ({ props }) => {
         <nav className="nav">
           
           <ul className= "column">
-            <li>  <Link className="link" to ="/take-orders">Pedidos</Link></li>
-            <li>  <Link className="link" to ="/view-all-Orders">Órdenes</Link></li>
-            <li>  <Link className="link" to="/cocina">Cocina</Link></li>
+            <li>  <Link className="link" to ="/view-admin">Administrar Usuarios</Link></li>
+            <li>  <Link className="link" to ="/view-admin-productos">Administrar Productos</Link></li>
             <li>  <Link className="link" to ="/">Cerrar sesión</Link></li>
           </ul>
         </nav>
@@ -21,4 +19,4 @@ const Header = ({ props }) => {
   )
 };
 
-export default Header;
+export default HeaderAdmin;

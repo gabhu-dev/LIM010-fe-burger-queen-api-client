@@ -1,7 +1,4 @@
 import React from 'react';
-
-
-
 const Clientname = ({ name, updateName, show, setShow }) => {
   const onSubmit = (e) => {
     e.preventDefault(); 

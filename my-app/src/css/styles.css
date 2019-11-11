@@ -238,7 +238,9 @@ column{
   background-color: rgba(0, 0, 0, .03);
   border-top: 1px solid rgba(0, 0, 0, .125)
 }
-
+.margin-2{
+  margin-top: 2em;
+}
 main {
   background-image: url(img/burger-2.jpg);
   background-size: contain;
