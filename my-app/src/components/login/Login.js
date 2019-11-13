@@ -69,8 +69,7 @@ const Login = (props) => {
         <button 
           className="btn-login" 
           type="submit"  
-          value="btn" 
-          onClick={handlebtn}
+          value="btn"
           data-testid="botonSubmit"
         > 
         INGRESA
