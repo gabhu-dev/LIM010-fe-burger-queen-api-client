@@ -1,12 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import Header from '../products/Header'
 import OrderCard from './Orders';
-import Options from '../Options'
 import getOrders from '../../controller/orders/getOrder'
 
-const ViewOrder = (props) => {
+const ViewAllOrders = (props) => {
   const [orders, setOrders] = useState([]);
-  const [type, setType] = useState('pending');
 
   useEffect(() => {
     const interval = () => {
@@ -24,20 +22,10 @@ const ViewOrder = (props) => {
     <div className="container-fluid">
       <Header props={props} />
       <div className="w-100">
-        <div className='margin-2'><Options click={() => setType('pending')} options="Pendientes"/>
-        <Options click={() => setType('delivered')} options="Entregados"/></div>
         <section className="subproducts-container">
-          {orders.length === 0 &&
-            <div className="mt-5 w-100 text-align">
-              No hay órdenes pendientes.
-            </div>}
           {orders.length !== 0 &&
             orders.map(el => {
-              if ((el.status === 'pending' || el.status === 'delivering'|| el.status === 'canceled') && type === 'pending') {
                 return <OrderCard order={el} key={el._id} />
-              } else if (el.status === 'delivered' && type === 'delivered') {
-                return <OrderCard order={el} key={el._id} />
-              }
             }).sort((a, b) => {
               const aValue = a.props.order.dateEntry;
               const bValue = b.props.order.dateEntry;
@@ -55,4 +43,4 @@ const ViewOrder = (props) => {
     </div>
   )
 }
-export default ViewOrder;
+export default ViewAllOrders;

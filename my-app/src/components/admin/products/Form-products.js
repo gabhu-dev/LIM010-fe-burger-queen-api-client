@@ -1,16 +1,14 @@
 // modal
 import React, {useState} from 'react';
-import addUser from '../../controller/users/add-user';
+import addProduct from '../../../controller/products/add-product';
 const FormUser = ({ show, setShow}) =>{
-  const [userEmail, setUserEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [productName, setProductName] = useState("");
+  const [price, setPrice] = useState("");
 
-  console.log(userEmail);
-  console.log(password);
   const onSubmit = (e) => {
     e.preventDefault(); 
     setShow(show === true ? false : true);
-    addUser(localStorage.getItem('token'),userEmail, password)
+    addProduct(localStorage.getItem('token'),productName, price)
     .then(res => console.log(res))
   }
   return(
@@ -18,20 +16,20 @@ const FormUser = ({ show, setShow}) =>{
     {show === true && ( 
       <div className="modal">
       <form onSubmit={onSubmit} className="form-user">
-        <label>Crear usuario</label>
+        <label>Crear producto</label>
         <input 
         type="text" 
         className ="input-user" 
         placeholder="name"
-        value={userEmail}
-        onChange={(e)=> setUserEmail(e.target.value)}
+        value={productName}
+        onChange={(e)=> setProductName(e.target.value)}
         />
         <input 
         type="text"
         className ="input-user" 
-        placeholder="password"
-        value={password}
-        onChange={(e)=> setPassword(e.target.value)}
+        placeholder="price"
+        value={price}
+        onChange={(e)=> setPrice(e.target.value)}
         />
         <button >Agregar</button>
         {/* <span className="close">&times;</span> */}

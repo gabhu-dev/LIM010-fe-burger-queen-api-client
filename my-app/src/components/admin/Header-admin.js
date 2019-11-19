@@ -8,7 +8,7 @@ const HeaderAdmin = ({ props }) => {
         <label htmlFor="btn-menu"><i className="fas fa-bars"></i></label>
         <img className= "crown" src={crown} alt="corona ,símbolo de burger queen"/>
         <nav className="nav">
-
+          
           <ul className= "column">
             <li>  <Link className="link" to ="/view-admin">Administrar Usuarios</Link></li>
             <li>  <Link className="link" to ="/view-admin-productos">Administrar Productos</Link></li>

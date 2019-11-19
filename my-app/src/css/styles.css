@@ -182,7 +182,7 @@
 .btn-break-dinner {
   background-color: #F29A2E;
   width: 25%;
-  height: 2em;
+  height: 2.5em;
   color: white;
   border-radius: 15px;
   border: none;
@@ -203,6 +203,37 @@
   justify-content: space-around;
   background-color: #ebeff13d; }
 
+.take-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 70%;
+  padding: 2em;
+  margin: auto;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  background-color: #EBEFF1;
+}
+.take-name{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  background-color: #EBEFF1;
+  padding: 2em;
+  margin: auto;
+  width: 90%;
+  align-items: center;
+}
+column{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.border-top {
+  background-color: rgba(0, 0, 0, .03);
+  border-top: 1px solid rgba(0, 0, 0, .125)
+}
+.margin-2{
+  margin-top: 2em;
+}
 main {
   background-image: url(img/burger-2.jpg);
   background-size: contain;
@@ -211,9 +242,11 @@ main {
   align-items: center; }
 
 .form-cliente {
-  margin: 1em;
-  padding: 0.5em;
-  width: 40%;
+  display: flex; 
+  align-items: center;
+  margin: 3em;
+  padding: 1em;
+  width: 95%;
   height: 3em;
   background-color: #EBEFF1; }
 
@@ -309,13 +342,23 @@ body {
 @media screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
   .form-login {
     width: 60%;
-    background-color: rgba(13, 13, 13, 0.5); } }
+    background-color: rgba(13, 13, 13, 0.5); } 
+  .card {
+    font-size: 1em;
+  }
+  .subproducts-container{
+    width: 93%;
+  }
+}
 
 @media screen and (min-width: 1024px) {
   .form-login {
     width: 40%; }
-  .header label {
-    display: none; }
+  /* .header label {
+    display: none; } */
+    .subproducts-container{
+      width: 93.4%;
+    }
   .nav {
     margin: 0;
     width: 100%;

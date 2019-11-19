@@ -1,10 +1,10 @@
 import React from 'react';
 
-const MenuOptions = ({click, options, aClass}) => {
+const MenuOptions = ({click, options}) => {
   return (
-    <li  className="nav-item" onClick={click}>
-      <button data-testid={options} className={aClass} data-toggle="tab" href="#" role="tab" >{options}</button>
-    </li>
+    <div  className="" onClick={click}>
+      <button className='btn-break-dinner' data-toggle="tab" href="#" role="tab" >{options}</button>
+    </div>
   )
 };
 

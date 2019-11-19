@@ -5,10 +5,14 @@ const  ListProducts = ({data, type, addProduct }) => {
   return filter.map(product => (
   <div className="card" key={product._id} onClick ={() => {addProduct(product)} } >
     <img className="product-img" src={product.image} alt={product.name} />
-        <div className="container">
-        <h4><b>{product.name}</b></h4>
-        <h5 className="price">S/.{product.price}</h5>
-        </div>
+    <div className="container">
+      <div>
+        <h4 className="text-center"><b>{product.name}</b></h4>
+      </div>
+      <div >
+        <h5 className="price text-center">S/.{product.price}</h5>
+      </div>
+    </div>
   </div>
  ))
 };
