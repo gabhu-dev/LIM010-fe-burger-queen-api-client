@@ -27,3 +27,4 @@ const addProduct = (token, name, price) => {
     }
   })
 };
+export default addProduct;

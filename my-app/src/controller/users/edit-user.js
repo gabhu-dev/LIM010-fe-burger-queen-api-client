@@ -1,18 +1,17 @@
-const editUser = (token, admin, id, email, password)=>{
+const editUser = (token, id, email, password) => {
   return fetch(`http://localhost:5000/users/${id}`,{
     method:'PUT',
-    headers:{
+    headers: {
       'Content-Type': 'application/json',
-      'Authorization': 'Bearer' + token
+      'authorization': 'Bearer' + token 
     },
-    body:{
-      admin,
+    body: {
       email,
-      password
+      password,
     }
   }).then((res)=>{
     if (res.status === 200) {
-      return res.json()
+      return res.json();
     } else if(res.status === 400){
       return Promise.reject({message: 'Nada modificado'})
     }else if (res.status === 401) {
@@ -25,3 +24,4 @@ const editUser = (token, admin, id, email, password)=>{
     return Promise.reject({ message: res.statusText })
   })
 }
+export default editUser;

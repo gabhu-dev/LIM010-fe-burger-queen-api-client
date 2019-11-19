@@ -3,13 +3,9 @@
 .container-table{
   @include flex-cen;
   @include flex-col-row(column);
-  border: 1px solid black;
   width: 100%;
-  height: 50em;
 }
-caption{
- 
-}
+
 .sub-container-table{
   @include flex-cen;
   width: 80%;
@@ -20,7 +16,6 @@ caption{
 .table-list{
   border-collapse: collapse;
   width: 90%;
-  border: 1px solid violet;
 }
 .table-list th ,.table-list td{
   border: 1px solid #ddd;

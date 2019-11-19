@@ -1,21 +1,17 @@
 // modal
-import React, {useState} from 'react';
+import React from 'react';
 import addUser from '../../controller/users/add-user';
-const FormUser = ({ show, setShow}) =>{
-  const [userEmail, setUserEmail] = useState("");
-  const [password, setPassword] = useState("");
 
-  console.log(userEmail);
-  console.log(password);
+const FormUser = ({ show, setShow, userEmail, setUserEmail, password, setPassword }) => {
   const onSubmit = (e) => {
-    e.preventDefault(); 
+    e.preventDefault();
     setShow(show === true ? false : true);
-    addUser(localStorage.getItem('token'),userEmail, password)
-    .then(res => console.log(res))
-  }
-  return(
+    addUser(localStorage.getItem('token'), userEmail, password)
+      .then((res) => console.log(res));
+  };
+  return (
     <>
-    {show === true && ( 
+      {show === true && (
       <div className="modal">
       <form onSubmit={onSubmit} className="form-user">
         <label>Crear usuario</label>
@@ -33,14 +29,15 @@ const FormUser = ({ show, setShow}) =>{
         value={password}
         onChange={(e)=> setPassword(e.target.value)}
         />
-        <button >Agregar</button>
+        <button type="button">Agregar</button>
         <span className="close">&times;</span>
       </form>
-    </div>)}
-     {show === false && (
+    </div>
+)}
+      {show === false && (
        <></>
      )}
     </>
-  )
-}
+  );
+};
 export default FormUser;
