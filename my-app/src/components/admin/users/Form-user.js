@@ -1,6 +1,6 @@
 // modal
 import React, {useState} from 'react';
-import addUser from '../../controller/users/add-user';
+import addUser from '../../../controller/users/add-user';
 const FormUser = ({ show, setShow}) =>{
   const [userEmail, setUserEmail] = useState("");
   const [password, setPassword] = useState("");
