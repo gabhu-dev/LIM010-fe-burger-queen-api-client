@@ -4,16 +4,16 @@ const addProduct = (token, name, price) => {
   return fetch('http://localhost:5000/products', {
     method: 'POST',
     headers: {
-     'Content-Type': 'application/json',
-     'Authorization': 'Bearer ' + token
+      'Content-Type': 'application/json',
+      'authorization': 'Bearer ' + token
     },
     body: { 
       name,
-      price
+      price,
     },
   }).then((resp) => {
     if (resp.status === 200) {
-      return resp.json()
+      return resp.json();
     } else if (resp.status === 400) {
       return Promise.reject({ message: 'Llene todos los campos' })
     } else if (resp.status === 401) {

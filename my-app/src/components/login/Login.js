@@ -1,19 +1,18 @@
-import React, { useState} from 'react';
+import React, { useState } from 'react';
 import '../../css/styles.css';
 import logo from '../../css/img/logo.png';
-import getToken from '../../controller/login-controller/token';
+import getToken from '../../controller/login-controller/Token';
 import getSpecificUser from '../../controller/users/id-user';
 
 const Login = (props) => {
-  const { history } = props;
-  const [email, setEmail] = useState("");
-  const [password, setPassword]=useState("");
-  const [err, setErr] = useState("")
-  
+  const {history} = props;
+  const [email, setEmail] = useState('');
+  const [password, setPassword] =useState('');
+  const [err, setErr] = useState('');
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
   }
-  const handlePassChange = (e) =>{
+  const handlePassChange = (e) => {
     setPassword(e.target.value);
   }
   
@@ -27,7 +26,7 @@ const Login = (props) => {
     getToken(email, password).then((res) => {
       const token = localStorage.setItem('token', res.token);
       const emailUser= localStorage.setItem('email', email);
-      getSpecificUser(token,emailUser)
+      getSpecificUser(token, emailUser)
       .then(response => {
         if(!response.roles.admin){
           history.replace('/take-orders')
@@ -44,7 +43,6 @@ const Login = (props) => {
 
   return (
   <div className="login column white calibri" id="login">
-   
       <form className="column form-login">
       <img className="logo" src={logo} alt="logo burger queen"/>
     <p className="message-logo">¡El placer en tus manos!</p>

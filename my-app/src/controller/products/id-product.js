@@ -1,19 +1,19 @@
 // informacion especifica de un producto
 // Requiere token de autenticación
 const getSpecificProduct = (token, name, price, idProduct) => {
-  return fetch(`http://localhost:5000/products/${idProduct}`,{
+  return fetch(`http://localhost:5000/products/${idProduct}`, {
     method: 'GET',
     headers: {
-     'Content-Type': 'application/json',
-     'authorization': 'Bearer ' + token
+      'Content-Type': 'application/json',
+      authorization: `'Bearer '${token}`,
     },
-    body: { 
+    body: {
       name,
-      price
+      price,
     },
   }).then((resp) => {
     if (resp.status === 200) {
-      return resp.json()
+      return resp.json();
     } else if (resp.status === 401) {
       return Promise.reject({ message: 'No es valido' })
     } else if (resp.status === 404) {
@@ -23,3 +23,4 @@ const getSpecificProduct = (token, name, price, idProduct) => {
     }
   })
 };
+export default getSpecificProduct;

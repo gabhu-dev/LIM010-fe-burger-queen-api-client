@@ -1,26 +1,25 @@
 const getToken = (email, password) => {
-  return fetch('http://localhost:5000/auth', {
+  return fetch('https://33972986.ngrok.io/auth', {
     method: 'POST',
     headers: {
-     'Content-Type': 'application/json'
+      'Content-Type': 'application/json',
     },
-    body: { 
-      email, 
-      password 
-    },
+    body: JSON.stringify({ 'email': email, 'password': password })
   }).then((resp) => {
     if (resp.status === 200) {
-      return resp.json()
-    } else if (resp.status === 400) {
-      return Promise.reject({ message: 'Ingrese su usuario y/o contraseña' })
-    } else if (resp.status === 401) {
-      return Promise.reject({ message: 'Ingrese correctamente su usuario y/o contraseña' })
-    } else if (resp.status === 403) {
-      return Promise.reject({ message: 'Ingrese en el área correcta  Admin o Empleado' })
-    } else {
-      return Promise.reject({ message: 'Solicite Credenciales con el Administrador' })
+      return resp.json();
     }
-  })
+    if (resp.status === 400) {
+      return Promise.reject(new Error('Ingrese su usuario y/o contraseña'));
+    }
+    if (resp.status === 401) {
+      return Promise.reject(new Error('Ingrese correctamente su usuario y/o contraseña'));
+    }
+    if (resp.status === 403) {
+      return Promise.reject(new Error('Ingrese en el área correcta  Admin o Empleado'));
+    }
+    return Promise.reject(new Error('Solicite Credenciales con el Administrador'));
+  });
 };
 
 export default getToken;
