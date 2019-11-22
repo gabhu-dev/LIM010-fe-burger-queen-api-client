@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect} from 'react';
 import ListProductOrder from './List-product-order';
 import putOrders from '../../controller/orders/status';
 

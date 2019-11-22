@@ -1,22 +1,21 @@
 // elimina un producto
 // Requiere token de autenticación y que la usuaria sea admin
-const deleteProducts = (token, idProduct)=>{
-  return fetch(`http://localhost:5000/products/${idProduct}`,{
+const deleteProducts = (token, idProduct) => {
+  return fetch(`http://476f43fc.ngrok.io/products/${idProduct}`, {
     method: 'DELETE',
-    headers:{
+    headers: {
       'Content-Type': 'application/json',
-      'authorization': 'Bearer ' + token
+      authorization: `Bearer ${token}`,
     }
-  }).then((res)=>{
+  }).then((res) => {
     if (res.status === 200) {
-      return res.json()
-    } else if (res.status === 401) {
-      return Promise.reject({ message: 'No existe token válido' })
-    } else if (res.status === 403) {
-      return Promise.reject({ message: 'Es necesario ser administrador ' })
-    } else if (res.status === 404) {
-      return Promise.reject({ message: 'Producto inexistente' })
+      return res.json();
+    } if (res.status === 401) {
+      return Promise.reject(new Error('No existe token válido'));
+    } if (res.status === 403) {
+      return Promise.reject(new Error('Es necesario ser administrador'));
     }
-    return Promise.reject({ message: res.statusText })
-  })
-}
+    return Promise.reject(new Error('Producto inexistente' ));
+  });
+};
+export default deleteProducts;

@@ -1,17 +1,15 @@
 // modal
 import React, {useState} from 'react';
 import addUser from '../../../controller/users/add-user';
-const FormUser = ({ show, setShow}) =>{
-  const [userEmail, setUserEmail] = useState("");
-  const [password, setPassword] = useState("");
 
-  console.log(userEmail);
-  console.log(password);
+const FormUser = ({ show, setShow}) =>{
+  const [userEmail, setUserEmail] = useState('');
+  const [password, setPassword] = useState('');
   const onSubmit = (e) => {
     e.preventDefault(); 
     setShow(show === true ? false : true);
-    addUser(localStorage.getItem('token'),userEmail, password)
-    .then(res => console.log(res))
+    addUser(localStorage.getItem('token'), userEmail, password)
+      .then(res => console.log(res))
   }
   return(
     <>

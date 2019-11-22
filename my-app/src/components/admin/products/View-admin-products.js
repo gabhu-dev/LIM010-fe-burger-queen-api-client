@@ -3,22 +3,23 @@ import HeaderAdmin from '../Header-admin';
 import getProducts from '../../../controller/products/products';
 import ListProducts from './List-products';
 import FormProduct from './Form-products';
+
 const ViewAdminProductos = (props) => {
-    const [productsData, setProductsData] = useState([]);
-    const [show, setShow] = useState(false);
-    const openModal = () => {
-      setShow(true);
-    };
-    const getData = () => {
-      const token = localStorage.getItem('token');
-      getProducts(token)
-        .then((res) => setProductsData(res));
-      console.log('se esta ejecutando');
-    };
-    useEffect(() => {
-      setInterval(getData, 3000);
-    }, []);
-    return (
+  const [productsData, setProductsData] = useState([]);
+  const [show, setShow] = useState(false);
+  const openModal = () => {
+    setShow(true);
+  };
+  const getData = () => {
+    const token = localStorage.getItem('token');
+    getProducts(token)
+      .then((res) => setProductsData(res));
+    console.log('se esta ejecutando');
+  };
+  useEffect(() => {
+    setInterval(getData, 3000);
+  }, []);
+  return (
       <div>
         <HeaderAdmin />
         <div className="container-table">
@@ -33,7 +34,7 @@ const ViewAdminProductos = (props) => {
                   <th>DateEntry</th>
                   <th>Acciones</th>
                 </tr>
-                <ListProducts data={productsData} />
+                <ListProducts data={productsData} getData={getData} />
               </tbody>
             </table>
           </div>
@@ -41,6 +42,6 @@ const ViewAdminProductos = (props) => {
           <FormProduct show={show} setShow={setShow} />
         </div>
       </div>
-    );
-  };
-  export default ViewAdminProductos;
+  );
+};
+export default ViewAdminProductos;

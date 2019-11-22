@@ -14,13 +14,10 @@ const getSpecificProduct = (token, name, price, idProduct) => {
   }).then((resp) => {
     if (resp.status === 200) {
       return resp.json();
-    } else if (resp.status === 401) {
-      return Promise.reject({ message: 'No es valido' })
-    } else if (resp.status === 404) {
-      return Promise.reject({ message: 'El producto no existe' })
-    } else {
-      return Promise.reject({ message:resp.statusText })
+    } if (resp.status === 401) {
+      return Promise.reject(new Error('No es valido'));
     }
-  })
+    return Promise.reject(new Error('El producto no existe'));
+  });
 };
 export default getSpecificProduct;

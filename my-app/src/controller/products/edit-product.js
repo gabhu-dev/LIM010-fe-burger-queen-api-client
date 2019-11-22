@@ -16,10 +16,10 @@ const editProduct = (token, id, name, price) => fetch(`http://localhost:5000/use
   } if (res.status === 400) {
     return Promise.reject(new Error('Nada modificado'));
   } if (res.status === 401) {
-    return Promise.reject({ message: 'No existe token válido' })
-  } else if (res.status === 403) {
-    return Promise.reject({ message: 'Es necesario ser administrador' });
+    return Promise.reject(new Error('No existe token válido'));
+  } if (res.status === 403) {
+    return Promise.reject(new Error('Es necesario ser administrador'));
   }
-  return Promise.reject({ message: 'Producto inexistente' });
+  return Promise.reject(new Error('Producto inexistente' ));
 });
 export default editProduct;

@@ -6,16 +6,15 @@ import getProducts from '../../controller/products/products';
 import Clientname from './Cliente';
 import ListProducts from './ListProducts';
 import Take from './Take';
-import postOrder from '../../controller/orders/Add-order';
-import getSpecificUser  from '../../controller/users/id-user';
+import postOrder from '../../controller/orders/add-order';
 
 
 const TakeOrders = (props) => {
-  const [name, setName] = useState("");
+  const [name, setName] = useState('');
   const [show, setShow] = useState(true);
-  const [productData, setProductData]=useState([]);
-  const [type, setType] = useState("desayuno");
-  const [arrayOrder, setArrayOrder]= useState([]);
+  const [productData, setProductData] = useState([]);
+  const [type, setType] = useState('desayuno');
+  const [arrayOrder, setArrayOrder] = useState([]);
   const [total, setTotal] = useState(0);
   const updateName = (e) => {
     setName(e.target.value)
@@ -27,7 +26,7 @@ const TakeOrders = (props) => {
     .then(res=> setProductData(res));
   }, [])
   console.log(productData);
-   const addProduct = (newProducto)=>{
+  const addProduct = (newProducto) => {
     if(arrayOrder.find((element)=> element.name === newProducto.name)){
       const newArray =arrayOrder.map((product) => {
         if(product.name ===newProducto.name) {
@@ -44,24 +43,32 @@ const TakeOrders = (props) => {
     } else {
       setArrayOrder([...arrayOrder, { ...newProducto, qty: 1, total: newProducto.price }]);
     }
-  }
+  };
   const sendPostOrders = () => {
+    // const token = localStorage.getItem('token');
+    // const email = localStorage.getItem('email');
+    // getSpecificUser(token,email)
+    // .then((resp) => {
+    //  postOrder(
+    //    token,
+    //    resp._id, 
+    //    name, 
+    //    arrayOrder.map(elem => ({ product: elem._id, qty: elem.qty })))
+    //    .then((res) =>{
+    //   setName('');
+    //   setArrayOrder([]);
+    //   setShow(true);
+    //  })
+    // });
     const token = localStorage.getItem('token');
     const email = localStorage.getItem('email');
-    getSpecificUser (token,email)
-    .then((resp) => {
-     postOrder(
-       token,
-       resp._id, 
-       name, 
-       arrayOrder.map(elem => ({ product: elem._id, qty: elem.qty })))
-       .then((res) =>{
-      setName('');
-      setArrayOrder([]);
-      setShow(true);
-     })
-    });
-  }
+    postOrder(token, email, name, arrayOrder.map(elem => ({ product: elem._id, qty: elem.qty })))
+      .then(res => {
+        setName('');
+        setArrayOrder([]);
+        setShow(true);
+      })
+  };
   return (
   <div> 
     <Header props={props}/>

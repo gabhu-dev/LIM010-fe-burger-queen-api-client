@@ -1,9 +1,9 @@
-const getSpecificUser = (token, idUser) => {
-  return fetch(`http://localhost:5000/users/${idUser}`, {
+const getSpecificUser = (token, emailUser) => {
+  return fetch(`http://476f43fc.ngrok.io/users/${emailUser}`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
-      authorization: `'Bearer '${token}`,
+      authorization: `Bearer ${token}`,
     },
   }).then((resp) => {
     if (resp.status === 200) {

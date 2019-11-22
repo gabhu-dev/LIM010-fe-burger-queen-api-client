@@ -1,12 +1,12 @@
 // crea una nueva usuaria
 // Requiere token de autenticación y que la usuaria sea admin
 
-const getUsers = (token)=>{
-  return fetch('https://33972986.ngrok.io/users',{
+const getUsers = (token) => {
+  return fetch('http://476f43fc.ngrok.io/users', {
     method:'GET',
     headers:{
       'Content-Type': 'application/json',
-      authorization: `'Bearer '${token}`,
+      authorization: `Bearer ${token}`,
     }
   }).then((res)=>{
     if (res.status === 200) {

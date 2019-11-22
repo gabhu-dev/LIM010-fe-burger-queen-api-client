@@ -6,6 +6,7 @@ const FormEdit = ({showEdit, setShowEdit}) => {
   const onSubmit = (e) => {
     e.preventDefault();
     setShowEdit(showEdit === true ? false : true);
+    editUser(localStorage.getItem('token'), localStorage.getItem('email'),)
   };
   return (
     <>

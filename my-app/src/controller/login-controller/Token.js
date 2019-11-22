@@ -1,10 +1,10 @@
 const getToken = (email, password) => {
-  return fetch('https://33972986.ngrok.io/auth', {
+  return fetch('http://476f43fc.ngrok.io/auth', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify({ 'email': email, 'password': password })
+    body: JSON.stringify({ email, password }),
   }).then((resp) => {
     if (resp.status === 200) {
       return resp.json();
