@@ -1,6 +1,6 @@
 // modifica un producto
 // Requiere token de autenticación y que la usuaria sea admin
-const editProduct = (token, id, name, price) => fetch(`http://localhost:5000/users/${id}`, {
+const editProduct = (token, id, name, price) => fetch(`http://localhost:5000/products/${id}`, {
   method: 'PUT',
   headers: {
     'Content-Type': 'application/json',

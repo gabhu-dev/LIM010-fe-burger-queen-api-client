@@ -1,6 +1,6 @@
 // Requiere token de autenticación
 const getProducts = (token) => {
-  return fetch('http://476f43fc.ngrok.io/products', {
+  return fetch('http://localhost:5000/products', {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',

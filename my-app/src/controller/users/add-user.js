@@ -1,6 +1,6 @@
 // crear una usuaria
 const addUser = (token, email, password) => {
-  return fetch('http://476f43fc.ngrok.io/users', {
+  return fetch('http://localhost:5000/users', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',

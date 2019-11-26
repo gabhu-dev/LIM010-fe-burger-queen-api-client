@@ -1,7 +1,7 @@
 // elimina un producto
 // Requiere token de autenticación y que la usuaria sea admin
 const deleteProducts = (token, idProduct) => {
-  return fetch(`http://476f43fc.ngrok.io/products/${idProduct}`, {
+  return fetch(`http://localhost:5000/products/${idProduct}`, {
     method: 'DELETE',
     headers: {
       'Content-Type': 'application/json',

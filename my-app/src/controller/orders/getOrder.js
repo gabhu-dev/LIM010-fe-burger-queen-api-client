@@ -1,5 +1,5 @@
 const getOrders = (token) => {
-  return fetch('http://476f43fc.ngrok.io/orders', {
+  return fetch('http://localhost:5000/orders', {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',

@@ -1,5 +1,5 @@
 const getSpecificUser = (token, emailUser) => {
-  return fetch(`http://476f43fc.ngrok.io/users/${emailUser}`, {
+  return fetch(`http://localhost:5000/users/${emailUser}`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',

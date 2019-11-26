@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import deleteUser from '../../../controller/users/delete-user';
 
-const ListUsers = ({ data, setShowEdit, getData }) => {
+const ListUsers = ({ data, getData, setShowEdit, setUserEmail }) => {
   const remove = (chosenUser) => {
     deleteUser(localStorage.getItem('token'), chosenUser)
       .then((res) => {
@@ -9,16 +9,21 @@ const ListUsers = ({ data, setShowEdit, getData }) => {
         getData();
       });
   };
-
+  const editUser = (userEmail) => {
+    setShowEdit(true);
+    setUserEmail(userEmail);
+  };
   return data.map((users) => (
     <tr className="row-list" key={users._id}>
-      <td className="cell">{users.email}</td>
+      <td className="cell">
+        {users.email }
+      </td>
       <td className="cell">
         <button
           type="button"
           className="button"
           value={users._id}
-          onClick={() => setShowEdit(true)}
+          onClick={() => editUser(users.email)}
         >
           <i className="far fa-edit" />
         </button>

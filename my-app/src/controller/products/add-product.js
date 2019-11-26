@@ -1,13 +1,13 @@
 // Requiere token de autenticación y que la usuaria sea admin
 // crear un producto
 const addProduct = (token, name, price, type, image) => {
-  return fetch('http://476f43fc.ngrok.io/products', {
+  return fetch('http://localhost:5000/products', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
       authorization: `Bearer ${token}`,
     },
-    body: JSON.stringify({name, price, type, image }),
+    body: JSON.stringify({name, price, type, image}),
   }).then((resp) => {
     if (resp.status === 200) {
       return resp.json();

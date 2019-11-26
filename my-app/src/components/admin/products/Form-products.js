@@ -1,6 +1,7 @@
 // modal
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import addProduct from '../../../controller/products/add-product';
+
 const FormUser = ({ show, setShow}) =>{
   const [productName, setProductName] = useState('');
   const [price, setPrice] = useState('');
@@ -11,7 +12,7 @@ const FormUser = ({ show, setShow}) =>{
     e.preventDefault(); 
     setShow(show === true ? false : true);
     addProduct(localStorage.getItem('token'), productName, price, type, image)
-    .then(res => console.log(res))
+      .then(res => console.log(res))
   }
   return(
     <>

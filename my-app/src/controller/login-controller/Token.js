@@ -1,5 +1,5 @@
 const getToken = (email, password) => {
-  return fetch('http://476f43fc.ngrok.io/auth', {
+  return fetch('http://localhost:5000/auth', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',

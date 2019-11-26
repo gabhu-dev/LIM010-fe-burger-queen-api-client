@@ -8,7 +8,7 @@ afterEach(() => {
 describe('getProducts function',()=>{
   it('have to obtain 200',async(done)=>{
     fetchMock
-    .get('http://localhost:5000/products', [{
+    .get('http://localhost:5000', [{
       "_id":"0001",
       "name":"Café americano",
       "price":5,
@@ -32,7 +32,7 @@ describe('getProducts function',()=>{
   })
   it('have to be 401',async(done)=>{
     fetchMock
-    .get('http://localhost:5000/products',401)
+    .get('http://localhost:5000',401)
     getProducts('ok')
     .catch(err=> {
       expect(err.message).toBe('No existe token válido')

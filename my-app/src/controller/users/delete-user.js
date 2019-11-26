@@ -1,6 +1,6 @@
 // borra una usuaria
 const deleteUser = (token, id) => {
-  return fetch(`http://476f43fc.ngrok.io/users/${id}`, {
+  return fetch(`http://localhost:5000/users/${id}`, {
     method: 'DELETE',
     headers: {
       'Content-Type': 'application/json',

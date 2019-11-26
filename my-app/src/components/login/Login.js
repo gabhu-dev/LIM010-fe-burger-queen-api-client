@@ -30,19 +30,19 @@ const Login = (props) => {
           .then((response) => {
             if (!response.roles.admin) {
               history.replace('/take-orders');
-            }else {
+            } else {
               history.replace('/view-admin');
             }
           });
-      }).catch((err) => {
-        setErr(err.message);
+      }).catch((error) => {
+        setErr(error.message);
       });
     }
   };
 
   return (
     <div className="login column white calibri" id="login">
-    <form className="column form-login">
+      <form className="column form-login">
         <img className="logo" src={logo} alt="logo burger queen" />
         <p className="message-logo">¡El placer en tus manos!</p>
         <input
@@ -74,7 +74,7 @@ const Login = (props) => {
         </button>
         {err && <p data-testid="mensajeError" className="error-message">{err}</p>}
       </form>
-  </div>
+    </div>
   );
 };
 export default Login;

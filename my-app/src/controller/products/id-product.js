@@ -12,7 +12,6 @@ const getSpecificProduct = (token, name, price, idProduct) => {
       price,
     },
   }).then((resp) => {
-    if (resp.status === 200) {
       return resp.json();
     } if (resp.status === 401) {
       return Promise.reject(new Error('No es valido'));

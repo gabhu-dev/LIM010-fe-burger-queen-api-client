@@ -1,5 +1,5 @@
 const editUser = (token, id, email, password) => {
-  return fetch(`http://476f43fc.ngrok.io/users/${id}`,{
+  return fetch(`http://localhost:5000/users/${id}`,{
     method:'PUT',
     headers: {
       'Content-Type': 'application/json',
