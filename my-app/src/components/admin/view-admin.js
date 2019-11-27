@@ -35,13 +35,28 @@ const ViewAdmin = (props) => {
                 <th>Email</th>
                 <th>Acciones</th>
               </tr>
-              <ListUsers data={usersData} getData={getData} setShowEdit={setShowEdit} setUserEmail={setUserEmail} />
+              <ListUsers
+                data={usersData}
+                getData={getData}
+                setShowEdit={setShowEdit}
+                setUserEmail={setUserEmail}
+              />
             </tbody>
           </table>
         </div>
         <button type="button" onClick={openModal} className="">Agregar usuario</button>
-        <FormUser show={show} setShow={setShow} />
-        <FormEdit showEdit={showEdit} setShowEdit={setShowEdit} userEmail={userEmail} setUserEmail={setUserEmail} password={password} setPassword={setPassword} />
+        <FormUser
+          show={show}
+          setShow={setShow}
+        />
+        <FormEdit
+          showEdit={showEdit}
+          setShowEdit={setShowEdit}
+          userEmail={userEmail}
+          setUserEmail={setUserEmail}
+          password={password}
+          setPassword={setPassword}
+        />
       </div>
     </div>
   );

@@ -1,33 +1,52 @@
 // modal
 import React from 'react';
-import editUser from '../../../controller/users/edit-user';
+// import editProduct from '../../../controller/products/edit-product';
 
-const FormEdit = ({showEdit, setShowEdit, userEmail, setUserEmail, password, setPassword}) => {
+const FormEdit = (
+  {
+    showEdit,
+    setShowEdit,
+    idProduct,
+    nameProduct,
+    priceProduct,
+    imageProduct,
+    typeProduct,
+  },
+) => {
   const onSubmit = (e) => {
     e.preventDefault();
     setShowEdit(showEdit === true ? false : true);
-    editUser(localStorage.getItem('token'), localStorage.getItem('email'), userEmail, password )
-      .then(res => console.log(res))
+    console.log('se puede editar');
   };
   return (
     <>
       {showEdit === true && (
       <div className="modal">
         <form onSubmit={onSubmit} className="form-user">
-          <label>Editar usuario</label>
+          <label>Editar producto</label>
           <input
             type="text"
             className="input-user"
-            placeholder="name"
-            value={userEmail}
-            onChange={(e) => setUserEmail(e.target.value)}
+            value={nameProduct}
+            // onChange={(e) => setUserEmail(e.target.value)}
           />
           <input
             type="text"
             className="input-user"
-            placeholder="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
+            value={priceProduct}
+            // onChange={(e) => setPassword(e.target.value)}
+          />
+          <input
+            type="text"
+            className="input-user"
+            value={imageProduct}
+            // onChange={(e) => setPassword(e.target.value)}
+          />
+          <input
+            type="text"
+            className="input-user"
+            value={typeProduct}
+            // onChange={(e) => setPassword(e.target.value)}
           />
           <button type="submit">Editar</button>
           <span className="close">&times;</span>
