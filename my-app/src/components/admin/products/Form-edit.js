@@ -1,52 +1,58 @@
 // modal
 import React from 'react';
-// import editProduct from '../../../controller/products/edit-product';
+import editProduct from '../../../controller/products/edit-product';
 
 const FormEdit = (
   {
     showEdit,
     setShowEdit,
+    token,
     idProduct,
     nameProduct,
     priceProduct,
     imageProduct,
     typeProduct,
+    setNameProduct,
+    setPriceProduct,
+    setImageProduct,
+    setTypeProduct,
   },
 ) => {
   const onSubmit = (e) => {
     e.preventDefault();
     setShowEdit(showEdit === true ? false : true);
-    console.log('se puede editar');
+    editProduct(token, idProduct, nameProduct, priceProduct, imageProduct, typeProduct)
+      .then((res) => console.log(res));
   };
   return (
     <>
       {showEdit === true && (
       <div className="modal">
         <form onSubmit={onSubmit} className="form-user">
-          <label>Editar producto</label>
+          <h1>Editar producto</h1>
           <input
             type="text"
             className="input-user"
             value={nameProduct}
-            // onChange={(e) => setUserEmail(e.target.value)}
+            onChange={(e) => setNameProduct(e.target.value)}
           />
           <input
             type="text"
             className="input-user"
             value={priceProduct}
-            // onChange={(e) => setPassword(e.target.value)}
+            onChange={(e) => setPriceProduct(e.target.value)}
           />
           <input
             type="text"
             className="input-user"
             value={imageProduct}
-            // onChange={(e) => setPassword(e.target.value)}
+            onChange={(e) => setImageProduct(e.target.value)}
           />
           <input
             type="text"
             className="input-user"
             value={typeProduct}
-            // onChange={(e) => setPassword(e.target.value)}
+            onChange={(e) => setTypeProduct(e.target.value)}
           />
           <button type="submit">Editar</button>
           <span className="close">&times;</span>

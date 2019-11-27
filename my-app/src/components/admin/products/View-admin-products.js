@@ -62,11 +62,16 @@ const ViewAdminProductos = (props) => {
           <FormEdit
             showEdit={showEdit}
             setShowEdit={setShowEdit}
+            token={token}
             idProduct={idProduct}
             nameProduct={nameProduct}
             priceProduct={priceProduct}
             imageProduct={imageProduct}
             typeProduct={typeProduct}
+            setNameProduct={setNameProduct}
+            setPriceProduct={setPriceProduct}
+            setImageProduct={setImageProduct}
+            setTypeProduct={setTypeProduct}
           />
         </div>
       </div>
